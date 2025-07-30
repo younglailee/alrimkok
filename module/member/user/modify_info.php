@@ -4,10 +4,10 @@
  * @author  Alpha-Edu
  */
 
-use sFramework\Html;
-use sFramework\MemberUser;
 use sFramework\CompanyUser;
+use sFramework\Html;
 use sFramework\InterestUser;
+use sFramework\MemberUser;
 
 if (!defined('_ALPHA_')) {
     exit;
@@ -45,13 +45,12 @@ $mode = $_GET['mode'];
 global $member;
 $mb_id = $member['mb_id'];
 $data = $oMember->selectDetail($mb_id);
-// 첨부파일
-$max_file = $oMember->get('max_file');
-$file_list = $data['file_list'];
 
 //기업 정보
 $cp_id = $data['cp_id'];
+// 첨부파일
 $cp_data = $oCompany->selectDetail($cp_id);
+$file_list = $cp_data['file_list'];
 $cp_count_arr = $oCompany->get('cp_count_arr');
 $cp_size_arr = $oCompany->get('cp_size_arr');
 $cp_revenue_arr = $oCompany->get('cp_revenue_arr');
@@ -308,7 +307,7 @@ function submitModifyInfo() {
                             if ($file_list[0]['fi_id']) {
                                 ?>
                                 <p>
-                                    <a href="./download.html?fi_id=<?= $file_list[0]['fi_id'] ?>"
+                                    <a href="../company/download.html?fi_id=<?= $file_list[0]['fi_id'] ?>"
                                        class="btn_download" target="_blank" title="새창 다운로드">
                                         <strong><?= $file_list[0]['fi_name'] ?></strong>
                                     </a>

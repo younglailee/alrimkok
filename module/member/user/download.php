@@ -9,6 +9,9 @@ use sFramework\MemberUser;
 if (!defined('_ALPHA_')) {
     exit;
 }
+$flag_use_head = false;
+$flag_use_header = false;
+$flag_use_footer = false;
 
 /* variable */
 $fi_id = $_GET['fi_id'];
