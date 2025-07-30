@@ -1,0 +1,33 @@
+@charset "utf-8";
+/**
+* ui
+*/
+body.login div#intranet_container{padding-bottom:0px; font-size:16px;}
+
+/*로그인 페이지*/
+div.intranet_login{position:relative; width:100%;}
+div.intranet_login > div.bigbox{width:80%; min-width:700px; max-width:1400px; position:absolute; transform: translate(-50%, -50%); top:50%; left:50%;}
+div.intranet_login div.login_box{min-width: 700px; max-width: 1400px; position:relative; width:100%; border:1px solid #ddd; box-sizing: border-box; margin: 0 auto;background: #fff;  }
+div.intranet_login div.login_box:before{display:block; position: absolute; width:100%; height: 100%; background:#fff; border-bottom:1px solid #eee; content:""; z-index: -1;}
+div.intranet_login div.login_box div.right,
+div.intranet_login div.login_box div.left{width:100%; height:100%; float:left;}
+div.intranet_login div.login_box div.left{padding:40px 0; background:#fff; box-sizing: border-box;}
+div.intranet_login div.login_box div.left div.info_box{width:60%; margin:0 auto; word-break: keep-all;}
+div.intranet_login div.login_box div.left div.info_box div.tit div.j_logo{width:345px; height:60px; margin:0 auto; padding-bottom:20px; font-size:24px; font-weight:500; color:#333;}
+div.intranet_login div.login_box div.left div.info_box div.tit div.j_logo img{width:100%;}
+div.intranet_login div.login_box div.left div.info_box div.line{position:relative; width:100%; height:1px; background:#ddd; margin:50px 0;}
+div.intranet_login div.login_box div.left div.info_box div.line span{position:absolute; transform: translate(-50%, -50%); top:50%; left:50%; width:175px; padding:0 10px; background:#fff; text-align:center; box-sizing: border-box; color:#ddd;}
+div.intranet_login div.login_box div.left div.info_box ul.input_box li{padding:10px 0;}
+div.intranet_login div.login_box div.left div.info_box ul.input_box li dl dt{padding-bottom:5px;}
+div.intranet_login div.login_box div.left div.info_box ul.input_box li dl dd input:-internal-autofill-selected{width:100%; background:#fff;}
+div.intranet_login div.login_box div.left div.info_box button.login{width:100%; padding:10px 0; margin-top:30px; background:#324fa6; color:#fff; transition: 0.5s all}
+div.intranet_login div.login_box div.left div.info_box button.login:hover{background:#333;}
+div.intranet_login div.login_box div.left div.info_box div.remember input,
+div.intranet_login div.login_box div.left div.info_box div.remember p{display: inline-block;}
+/* //로그인 페이지*/
+
+div.section {margin-bottom:40px;}
+div.certify_process span.on {color:orange;font-weight:bold;}
+.reg_txt {width:90%; height:170px;}
+div.cert_btn_wrap { width:670px; overflow:hidden; }
+div.cert_btn { float:left; width:320px; height:200px; border:1px solid #e1e1e1; text-align:center; }

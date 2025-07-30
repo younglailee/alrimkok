@@ -1,0 +1,44 @@
+@charset "utf-8";
+
+
+@media all and (max-width : 1480px){
+    #new_cmm_sub { padding: 0 20px; }
+    .title { margin-bottom: 25px; font-size: 28px; }  
+}
+
+@media all and (max-width : 1024px){
+    #new_cmm_sub { padding: 110px 20px 0; }
+    .step { padding: 41px 0 11px 0; font-size: 18px; word-break: keep-all; }
+    .step_02 { padding: 24px 0 0 0; }
+    .owner_type label { margin-bottom: 5px; display: block; }
+    .owner_type label:last-child { margin-bottom: 0; }
+    .owner_table tr { display: block; padding: 12px 0; width: 100%; }
+    .owner_table th { display: block; padding: 0 0 5px; width: 100%; }
+    .owner_table td { display: block; padding: 0; width: 100%; }
+    .owner_table input { width: 100%; height: 50px; box-sizing: border-box; }
+    .owner_table .email_wrap { display: flex; align-items: center; }
+    .owner_table #mb_email { flex-shrink: 0; flex-grow: 0; width: 155px; margin-right: 4px; }
+    .owner_table #mb_mail2 { flex-shrink: 0; flex-grow: 0; width: 155px; margin-left: 4px; }
+    .owner_table #uniform-mail_selector { flex-grow: 1; margin-left: 12px; height: 48px; }
+    .owner_table #uniform-mail_selector span { width: 100% !important; height: 48px; line-height: 48px; padding-right: 0; }
+    .owner_table #mail_selector { width: 100% !important; height: 48px; line-height: 48px; }
+    .owner_table textarea { width: 100%; height: 350px; box-sizing: border-box; }
+    .owner_table .no_line { padding-bottom: 0; border-bottom: 0; }
+    .owner_table .ul_wrap { padding: 6px 0 !important; }
+    .owner_table ul { font-size: 14px; }
+    .owner_table ul p { margin-bottom: 10px; }
+    .owner_agree { padding-top: 18px; }
+    #new_apply_btn { width: 200px; height: 45px; line-height: 45px; font-size: 14px; }
+}
+
+@media all and (max-width : 719px){
+    .step p { max-width: 240px; }
+    .email_wrap { flex-wrap: wrap; }
+    .owner_table #mb_email { width: calc(50% - 11.5px); }
+    .owner_table #mb_mail2 { width: calc(50% - 11.5px); }
+    .owner_table #uniform-mail_selector { margin: 8px 0 0; }
+    .owner_agree { display: flex; }
+    .owner_agree > input { flex-shrink: 0; }
+    .owner_agree > label { margin: -5px 0 0; word-break: keep-all; }
+}
+

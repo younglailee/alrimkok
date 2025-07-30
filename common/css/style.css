@@ -1,0 +1,566 @@
+@charset "utf-8";
+
+/**
+ * common
+ */
+/**
+* img, a, button, select, input, textarea, font, table 등의 스타일을 선언해두었습니다.
+*/
+
+/* default */
+/* default 영역은 수정하지 마세요 */
+a {text-decoration:none; }
+a:hover, a:focus,
+button:hover, button:focus,
+select:hover, select:focus,
+input:hover, input:focus,
+textarea:hover, textarea:focus {outline:none; text-decoration:none; }
+button {background:none; border:none; cursor:pointer;}
+p, span, h3, h4, h5, li {word-break:keep-all;}
+/**
+* Button
+*/
+.btn_box {margin-top:2rem !important; text-align:center;}
+.btn_box ul {position:relative; display:inline-block; text-align: center;}
+.btn_box ul:after {display:block; clear:both; content:"";}
+.btn_box ul li { float:left; box-sizing:border-box; padding-left:1rem;}
+.btn_box ul li:first-child {padding-left:0; margin-left:0;}
+.btn_box.box1 ul li {width:100%}
+.btn_box.box2 ul li {width:50%;}
+.btn_box.box3 ul li {width:33.3%;}
+.btn_box.box4 ul li {width:25%;}
+.btn {display:inline-block; min-width:70px; height:30px; line-height:20px; padding:3px; border:1px solid transparent; text-align:center; font-weight:00; background-color:#eee; white-space:nowrap; vertical-align:middle; border-radius:0.4rem; transition:color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out; box-sizing:border-box; cursor:pointer; font-size:14px; color:#aaa;}
+a.btn{vertical-align: top; line-height:1.5;}
+.btn.fwidt{min-width:auto;}
+.btn.btn_line {border:1px solid #bbbbbb; background:#f5f5f7; color:#666; box-sizing:border-box;}
+.btn.btn_round {min-width:60px; padding:0; border-radius: 50%; line-height: 5rem;}
+.btn.btn_radius {border-radius:30px}
+.btn.btn_shadow {box-shadow:2px 2px 2px rgba(0, 0, 0, 0.2);}
+.btn.btn_transparent {background-color:transparent; border-color:#fff; color:#fff;}
+.btn > i {font-size:14px; line-height: 1.2; }
+.btn > strong {font-weight: 800; }
+
+.btn.dark,
+a.btn.dark{background:#363b3e; color:#fff; border:1px solid #363b3e; box-sizing: border-box;}
+.btn.dark:hover,
+a.btn.dark:hover{background:#324fa6; color:#fff; border:1px solid #324fa6; box-sizing: border-box;}
+.btn.btnline,
+a.btn.btnline{display: inline-block; background:#fff; color:#363b3e; border:1px solid #363b3e;}
+.btn.btndanger,
+a.btn.btndanger{background:#dd5145; color:#fff; border:1px solid #dd5145;}
+.btn.btnline:hover,
+a.btn.btnline:hover,
+.btn.btndanger:hover,
+a.btn.btndanger:hover{ background:#324fa6; color:#fff; border:1px solid #324fa6;}
+
+/* color */
+.intranet_primary{color:#324fa6;}
+.btn_primary {background:#324fa6; color:#fff !important;}
+.btn_primary.btn_line {border:1px solid #324fa6; background:#fff; color:#324fa6 !important;}
+.btn_secondary {background:#333; color:#fff !important;}
+.btn_secondary.btn_line {border:1px solid #333; background:#fff; color:#333 !important;}
+.btn_success {background:#c50233; color:#fff !important;}
+.btn_success.btn_line {border:1px solid #c50233; background:#fff; color:#c50233 !important;}
+.btn_info {background:#222222; color:#fff !important;}
+.btn_info.btn_line {border:1px solid #222222; background:#fff; color:#222222 !important;}
+.btn_warning {background:#ffc107; color:#fff !important;}
+.btn_warning.btn_line {border:1px solid #ffc107; background:#fff; color:#ffc107 !important;}
+.btn_danger {background:#fb5e5e; color:#fff !important;}
+.btn_danger.btn_line {border:1px solid #fb5e5e; background:#fff; color:#fb5e5e !important;}
+.btn_disabled {font-weight:600; color:#333 !important;}
+.btn_disabled.btn_line {border:1px solid #999999; background:#fff; color:#222 !important;}
+.btn.disable{font-weight:600; color:#333; box-sizing:border-box;}
+
+button.btn:active,
+button.btn:hover,
+a.btn:active,
+a.btn:hover {border-color:#111; background-color:#111; color:#fff !important; box-sizing:border-box;}
+
+/* size */
+.btntiny {min-width: 40px; height:30px; line-height:30px; font-size:12px; padding:0 1px; }
+.btntiny.btn_radius {border-radius: 30px; }
+.btntiny > i { vertical-align: top; line-height:2.3rem;font-size: 1.5rem;}
+
+.btnsmall {min-width: 60px; height:30px; line-height:1; font-size:14px; }
+.btnsmall.btn_radius {border-radius:30px}
+.btnsmall > i { vertical-align:sub;}
+
+.btnlarge {min-width: 80px; height:50px; line-height:40px; font-size:1.6rem; padding:0 10px; font-weight:600;}
+.btnlarge.btn_radius {}
+.btnlarge > i {line-height:6rem;}
+
+.btnxlarge {min-width: 100px; height:80px; line-height:8rem; font-size:2.0rem; padding:0 20px;}
+.btnxlarge.btn_radius {}
+.btnxlarge > i {}
+
+/* align */
+.btn_left {position:relative; padding:0 6rem 0 2rem; text-align:left; }
+.btn_left > i {position:absolute; right:2rem; font-size:1.4rem;}
+.btn_block {width:100%;}
+
+/**
+* text
+*/
+/* color */
+.primary {color:#324fa6 !important;}
+.secondary {color:#495266 !important;}
+.third {color:#ff313a !important;}/* primary, secondary 외 간혹 포인트를 이용해야하는 경우 */
+.warning {color:#fb5e5e !important;}
+.txt.black {color:#222 !important;}
+
+/* style */
+.txt.tiny {font-size:13px !important;}/* 폰트 사이즈가 가장 작은 경우 */
+
+.txt.thin {font-weight:100 !important;}/* heading 요소 이외에 얇은 서체를 이용해야하는 경우 수정 */
+.txt.bold {font-weight:600 !important;}
+.txt.bolder {font-weight:800}/* bold보다 강조를 해야하는 경우 */
+
+/* 줄바꿈 */
+/* contarea의 row 사용 시 해당 요소에 height 잡아줘야함 */
+.contarea {display:block; overflow:hidden; text-overflow:ellipsis; vertical-align:middle; white-space:nowrap;}
+.contarea.row2 {display:-webkit-box; white-space:normal;-webkit-box-orient:vertical;-webkit-line-clamp:2}
+.contarea.row3 {display:-webkit-box; white-space:normal;-webkit-box-orient:vertical;-webkit-line-clamp:3}
+.contarea.row4 {display:-webkit-box; white-space:normal;-webkit-box-orient:vertical;-webkit-line-clamp:4}
+/* 블릿 스타일 */
+ul.list {}
+ul.list li {position:relative;}
+ul.list li:before {}
+ul.list.bul li {padding:2px 0 2px 10px;}
+ul.list.bul li:before { display:block; position:absolute; top:10px; left:0;width:4px; height:4px; content:""; background:#999;}
+ul.list.line li {border-top:1px solid #ddd;}
+ul.list.line li:first-child {border-top:0;}
+
+/**
+* img 비율
+*/
+.imgarea {display:block; position:relative; overflow:hidden; padding-top:100%; background-color:#eee;}
+/* 1:1 비율 */
+.imgarea .thumbarea {position:absolute; top:0; left:0; right:0; bottom:0; width:100%; }
+.imgarea .thumbarea img {width:100%; height:auto;}
+.imgarea.ratio2 {padding-top:50%;}/* 2:1 비율 */
+.imgarea.ratio3 {padding-top:33%;}/* 3:1 비율 */
+.imgarea.ratio4 {padding-top:75%;}/* 4:3 비율 */
+.imgarea.ratio5 {padding-top:25%;}/* 4:1 비율 */
+.imgarea.ratio16 {padding-top:56.25%;}/* 16:9 비율 */
+.imgarea.radius {border-radius:50%;}
+
+/**
+* background-color
+*/
+.bg_primary {background:#324fa6;}
+.bg_secondary {background-color:#333 !important; color:#fff;}
+.bg_third {background-color:#ff313a !important; color:#fff;}
+/* primary, secondary 외 간혹 포인트를 이용해야하는 경우 */
+.bg_basic {background-color:#dddddd !important;}/* gray 등 기본적으로 사용되는 연한 색상 */
+.bg_soft {background-color:#f5f5f5 !important;}/* bg_soft보다 연한 색상을 이용하는 경우 */
+
+/**
+* select
+*/
+/* optionlist common */
+.optionlist a,
+.optionlist button {display:block; position:relative; width:100%; padding:0 5rem 0 2rem;border:1px solid #333; text-align:left; height: 5rem; line-height: 5rem; box-sizing: border-box; padding:0 2rem; background-color:#fff; color:#222;}
+
+.optionlist a > i,
+.optionlist button > i {position:absolute; right:0; top:0; width:5rem; line-height: 5rem; font-size:2.4rem; text-align: center;}
+
+.optionlist a:hover,
+.optionlist button:hover {}
+.optionlist .listbox {display:none;}
+.optionlist.open .listbox {display:block;} /* 옵션 출력*/
+
+/* optionlist > listbox */
+.optionlist .listbox {position:absolute; top:100%; left:0; right:0; z-index: 10}
+.optionlist .listbox a,
+.optionlist .listbox button {border-top:0; border-color:#ddd; padding-right:0;}
+.optionlist .listbox a:hover,
+.optionlist .listbox button:hover {background-color:#f5f5f5}
+.optionlist .listbox a:hover:after,
+.optionlist .listbox button:hover:after {/*display:block; position:absolute; left:0; top:0;  width:100%; height:1px; background-color:#333; content: ""; z-index: 10;*/}
+
+.numberbox {}
+.numberbox button,
+.numberbox a,
+.numberbox input {width:3rem !important; height: 3rem !important; line-height: 3rem !important; padding:0 !important;}
+.numberbox input {width:5rem !important;}
+.numberbox a,
+.numberbox button {border:1px solid #ddd; font-size:1.8rem;}
+.numberbox input {display: inline-block; border-radius: 0; border-right: 0; border-left:0; }
+.numberbox input[type='text'] {text-align: center;}
+.numberbox input:hover,
+.numberbox input:focus {border:1px}
+
+
+/**
+* input
+*/
+input,
+textarea.textarea,
+select.select {
+    -webkit-appearance:none;
+     -webkit-appearance: none;
+    -webkit-border-radius:0.4rem;
+    -webkit-appearance:none; /* 화살표 없애기 for chrome*/
+    -moz-appearance:none; /* 화살표 없애기 for firefox*/
+}
+select::-ms-expand {
+    display:none; /* 화살표 없애기 for IE10, 11*/
+}
+select, input, input.file {width:auto; height:23px; line-height:23px; border:1px solid #ddd;box-sizing:border-box; border-radius:4px; background: #fff;}
+/* textarea */
+textarea {width:100%; border-color:#ddd; resize:none; box-sizing: border-box; border-radius:4px;padding:1rem; }
+/* input */
+input[type='text'],
+input[type="password"],
+input[type='tel'],
+input[type='date'] { color:#222; text-align: left;}
+input[type='file']:focus,
+input[type='text']:focus,
+input[type="password"]:focus,
+input[type='tel']:focus {border:1px solid #333; outline:none; }
+input.readonly {background:#f5f5f5;}
+input.birthday,
+input.date {text-align:left; border-right:1px solid #ddd;}
+
+.dateform {display:inline-block;position:relative;}
+.dateform > .ui-datepicker-trigger{position:absolute; right:0; top:50%; transform: translate(0, -50%)}
+.dateform.full {display: block;}
+
+
+/* select */
+select.select {padding-right:4.4rem; padding-left:1rem; background:url("/webuser/img/ico_select_arrow.png") right 0 no-repeat #fff; background-size:44px; vertical-align:middle;}
+
+/* size */
+select.small,
+input.small,
+input.file.small {height:30px; line-height:30px; font-size:14px;}
+select.large,
+input.large,
+input.file.large {height:50px; line-height:50px; font-size:16px;}
+select.xlarge,
+input.xlarge,
+input.file.xlarge {height:70px; line-height:70px; font-size:16px; border-radius:10px;}
+select.select.xlarge {background-position:right 50%;}
+select.block,
+input.block,
+input.file.block {width:100%;}
+select.transparent,
+input.transparent,
+input.file.transparent {border:0;}
+
+/* checkbox */
+.formfield {display:inline-block; position:relative; line-height: 4rem;}
+.formfield input[type="checkbox"] { /* 실제 체크박스는 화면에서 숨김 */
+    position:absolute;
+    width:1px;
+    height:1px;
+    padding:0;
+    margin:-1px;
+    overflow:hidden;
+    clip:rect(0, 0, 0, 0);
+    border:0
+}
+.formfield input[type="checkbox"] + label {
+    display:inline-block;
+    position:relative;
+    padding-left:0; /* 글자와 체크박스 사이의 간격을 변경*/
+    line-height:16px; /* size에 따른 높이 조절 */
+    cursor:pointer;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+}
+.formfield input[type="checkbox"] + label:before { /* 가짜 체크박스 */
+    content:' ';
+    display:inline-block;
+    width:20px; /* 체크박스의 너비를 지정 */
+    height:20px; /* 체크박스의 높이를 지정 */
+    margin:-2px 8px 0 0;
+    text-align:center;
+    vertical-align:middle;
+    background:#fafafa;
+    border:1px solid #ddd;
+    border-radius:4px;
+    box-sizing:border-box;
+}
+.formfield input[type="checkbox"] + label:active:before,
+.formfield input[type="checkbox"]:checked + label:active:before {
+    box-shadow:0 1px 2px rgba(0, 0, 0, 0.05), inset 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+.formfield input[type="checkbox"]:checked + label:before { /* 체크박스를 체크했을때 */
+    font-family:'xeicon';
+    content:'\e928'; /* 체크표시 유니코드 사용 */
+    font-size:18px;
+    color:#99a1a7;
+    background-color:#ff4e4e; /* check bg 색상 수정*/
+    border-color:#ff4e4e;
+    color:#fff;
+    display:inline-block;
+    font-style:normal;
+    font-variant:normal;
+    text-rendering:auto;
+    -webkit-font-smoothing:antialiased;
+}
+.formfield input[type="checkbox"] + label:first-of-type {
+	margin-left:0rem;
+}
+/* small */
+.formfield.small input[type="checkbox"] + label {
+    font-size:12px;
+}
+.formfield.small input[type="checkbox"] + label:before {
+    width:1.6rem;
+    height:1.6rem;
+    line-height:1.6rem;
+    font-size:1.1rem;
+}
+.formfield.etrans input[type="checkbox"] + label {
+    padding-left:30px;
+}
+.formfield.etrans input[type="checkbox"] + label:before {
+    position:absolute;
+    left:0;
+    top:0;
+    margin-top:0;
+    opacity:.6;
+    box-shadow:none;
+    border-color:#6cc0e5;
+    -webkit-transition:all .12s, border-color .08s;
+    transition:all .12s, border-color .08s;
+}
+.formfield.etrans input[type="checkbox"]:checked + label:before {
+    position:absolute;
+    content:"";
+    width:10px;
+    top:-5px;
+    left:5px;
+    border-radius:0;
+    opacity:1;
+    background:transparent;
+    border-color:transparent #ff4e4e #ff4e4e transparent;
+    border-top-color:transparent;
+    border-left-color:transparent;
+    -ms-transform:rotate(45deg);
+    -webkit-transform:rotate(45deg);
+    transform:rotate(45deg);
+}
+.no-csstransforms .formfield.etrans input[type="checkbox"]:checked + label:before {
+    /*content:"\2713";*/
+    content:"\2714";
+    top:0;
+    left:0;
+    width:21px;
+    line-height:21px;
+    color:#ff4e4e;
+    text-align:center;
+    border:1px solid #ff4e4e;
+}
+/* radio */
+.formfield input[type="radio"] {
+    position:absolute;
+    width:1px;
+    height:1px;
+    padding:0;
+    margin:-1px;
+    overflow:hidden;
+    clip:rect(0, 0, 0, 0);
+    border:0;
+}
+.formfield input[type="radio"] + label {
+    display:inline-block;
+    position:relative;
+    padding-left:20px;
+	margin-left:1rem;
+    line-height:1.6; /* size에 따른 높이 조절 */
+    cursor:pointer;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+}
+.formfield input[type="radio"] + label:before {
+    content:'';
+    position:absolute;
+    left:0;
+    width:20px; /* size 조절 */
+    height:20px; /* size 조절 */
+    text-align:center;
+    background:#fafafa;
+    border:1px solid #ddd;
+    border-radius:100%;
+    box-sizing:border-box;
+}
+.formfield input[type="radio"] + label:active:before,
+.formfield input[type="radio"]:checked + label:active:before {
+}
+.formfield input[type="radio"]:checked + label:before {
+    background-color:#324fa6; /* check bg 색상 수정*/
+    border-color:#324fa6;;
+}
+.formfield input[type="radio"]:checked + label:after {
+    content:'';
+    position:absolute;
+    top:0px;
+    left:3px;
+    font-family:'xeicon';
+    content:'\e928'; /* 체크표시 유니코드 사용 */
+    color:#fff;
+    font-size:14px;
+    display:inline-block;
+    font-style:normal;
+    font-variant:normal;
+    text-rendering:auto;
+    -webkit-font-smoothing:antialiased;
+}
+.formfield input[type="radio"].disabled + label:before {
+    text-align:center;
+    background:#ddd;
+    border:1px solid #ddd;
+}
+/* radio size */
+.formfield.small input[type="radio"] + label {
+    font-size:12px;
+    padding-left:25px;
+}
+.formfield.small input[type="radio"] + label:before {
+    top:-2px;
+    width:17px;
+    height:17px;
+}
+.formfield.small input[type="radio"]:checked + label:after {
+    top:-6px;
+    width:9px;
+    height:9px;
+}
+.formfield input[type="radio"] + label:first-of-type {
+	margin-left:0;
+}
+
+/**
+* common
+*/
+/* field > field_header */
+div.field_header:after {display:block; clear:both; content:"";}
+div.field_header div.right {text-align:right;}
+/* field > toogle */
+div.field {position:relative; border-top:2px solid #333;}
+div.field > ul > li {position:relative; border-bottom:1px solid #ddd;}
+div.field > ul > li div.formfield {padding:1.5rem 1rem;}
+div.field > ul > li button.btn_arrow {position:absolute; top:0.5rem; right:0; width:4.4rem; height:4.4rem; }
+div.field > ul > li button.btn_arrow i {text-align:center; font-size:2.4rem; line-height:4.4rem;}
+div.field > ul > li.on button.btn_arrow i {transform:rotate(-180deg); -wikit-transform:rotate(-180deg);}
+div.field > ul > li div.agree_area {display:none;}
+div.field > ul > li.on div.agree_area {display:block;overflow:hidden; overflow-y:scroll; height:15rem; padding:1.5rem 1rem; border-top:1px solid #ddd; background-color:#f5f5f5; box-sizing:border-box;}
+/* field > input */
+div.field > ul > li dl {padding:1rem; box-sizing:border-box;}
+div.field > ul > li dl dt {margin-bottom:1rem; color:#333333;}
+div.field > ul > li dl dd {margin-top:1rem;}
+div.field > ul > li dl dd:first-of-type {margin-top:0;}
+div.field > ul > li dl dd div.formfield {padding:0;}
+/* input style*/
+div.field > ul > li dl dd span.txt {display:block; font-size:1.2rem; color:#0097a7;}
+/* input 하위 설명 출력되는 공간 */
+
+/* field > input > required */
+div.field > ul > li.required > dl > dt:after {display:inline-block; margin-left:0.5rem; font-family:'fontawesome'; content:"\f069"; font-size:1rem; vertical-align:text-bottom; color:#324fa6;}
+div.field > ul > li.none dl dd {display:none;}
+div.field > ul > li.none dl dd:last-of-type {display:block;}
+div.formtxt {padding-top:1.5rem;}
+div.guide {padding:1rem; margin-bottom:1rem; border-radius:4px; background-color:#f5f5f5; }
+/* viewbox */
+div.viewinfo {border-top:2px solid #333;}
+div.viewinfo ul li {border-bottom:1px solid #ddd; padding:1rem; }
+div.viewinfo dl {display:table;width:100%; }
+div.viewinfo dl dt,
+div.viewinfo dl dd {display:table-cell; vertical-align:middle;}
+div.viewinfo dl dt {width:25%; color:#333}
+div.viewinfo dl dd {width:80%;}
+/* size */
+.col:after {display:block; clear:both; content:"";}
+.col2 > input,
+.col2 > select,
+.col2 > a,
+.col2 > button,
+.col2 > div { width:calc((100% - 1rem) / 2); box-sizing:border-box; margin-left:0.5rem; float:left;}
+.col3 > input,
+.col3 > select,
+.col3 > a,
+.col3 > button,
+.col3 > div { width:calc((100% - 1rem) / 3); box-sizing:border-box; margin-left:0.5rem; float:left;}
+.col > input:first-child,
+.col > select:first-child,
+.col > a:first-child,
+.col > button:first-child,
+.col > div:first-child {margin-left:0;}
+/*
+** ui
+*/
+table.etc {margin-bottom:0;}
+
+/* table > list_type */
+table.list_type,
+table.list_type tr th,
+table.list_type tr td {border:0; word-break:keep-all;}
+table.list_type {width:100%;margin-bottom:2rem; table-layout:fixed; border-top:2px solid #4a505d; }
+table.list_type caption {display:none}
+table.list_type thead tr th {border-bottom:1px solid #ddd;background:#4a505d;color:#fff;font-weight:bold;text-align:center; vertical-align:middle; padding:1.5rem 0; }
+table.list_type tbody tr th {border-bottom:1px solid #ddd;background:#f5f5f5;color:#555555;font-weight:bold;text-align:center; vertical-align:middle;}
+table.list_type tbody tr td {padding:0.5rem; text-align:center; border-bottom:1px solid #dddddd;vertical-align:middle; color:#555555;}
+/* table > write_type */
+table.write_type,
+table.write_type tr th,
+table.write_type tr td {border:0; word-break:keep-all;}
+table.write_type {width:100%;margin-bottom:20px; table-layout:fixed; border-top:2px solid #4a505d;}
+table.write_type caption {display:none}
+table.write_type tr th {border-bottom:1px solid #ddd;background:#4a505d;color:#fff;font-weight:bold;text-align:center; vertical-align:middle;}
+table.write_type tr td {padding:20px;border-bottom:1px solid #dddddd;vertical-align:middle; color:#555555;}
+table.write_type tr.gray > td {background-color:#f5f5f5;}
+table.write_type tr.primary > th {background-color:#324fa6;;}
+table.write_type tr td ul:after {display:block; clear:both; content:""; }
+table.write_type tr td ul li {width:200px; float:left;}
+table.write_type tr td ul li dl dt,
+table.write_type tr td ul li dl dd {display:inline-block;}
+table.write_type tr td ul li dl dt {width:100px; height:24px; margin-right:10px;line-height:24px; font-size:12px; text-align:center; border-radius:2px; font-weight:500; background-color:#0097a7; color:#fff;}
+table.write_type tr td p.txt {margin-top:10px; color:#999; background:none !important; padding-left:0 !important;}
+/* table > calendar_type */
+table.calendar_type,
+table.calendar_type tr th,
+table.calendar_type tr td {border:0; word-break:keep-all;}
+table.calendar_type {width:100%;margin-bottom:20px; table-layout:fixed; }
+table.calendar_type caption {display:none}
+table.calendar_type thead tr th {border-left:1px solid #fff; background:#4a505d;color:#fff;font-weight:bold;text-align:center; vertical-align:middle;line-height:50px;}
+table.calendar_type tbody tr th {border-bottom:1px solid #ddd;background:#f5f5f5;color:#555555;font-weight:bold;text-align:center; vertical-align:middle;}
+table.calendar_type tbody tr td {padding:0.5rem;border-bottom:1px solid #dddddd; border-left:1px solid #dddddd;vertical-align:top; color:#555555;}
+table.calendar_type tbody tr td:first-child {border-left:0;}
+table.calendar_type tr th.sun {color:#fff; background-color:#324fa6;;}
+table.calendar_type tr td.sun {color:#324fa6;}
+table.calendar_type tr th.sat {color:#fff; background-color:#1e88e5;}
+table.calendar_type tr td.sat {color:#1e88e5}
+table.calendar_type tbody tr td div.day {position:relative;}
+table.calendar_type tbody tr td div.day span {}
+table.calendar_type tbody tr td div.tour a {display:block; text-align:center; color:#555;}
+table.calendar_type tbody tr td div.tour a em {display:block;}
+table.calendar_type tbody tr td div.tour a strong {display:inline-block; padding:0.2rem 0.4rem; border-radius:4px; color:#fff;}
+/* start */
+table.calendar_type tbody tr td div.tour.start em {color:#0097a7;}
+table.calendar_type tbody tr td div.tour.start strong {background-color:#0097a7;}
+table.calendar_type tbody tr td div.tour.start strong.state_end {display:none;}
+/* end */
+table.calendar_type tbody tr td div.tour.end em {color:#999999;}
+table.calendar_type tbody tr td div.tour.end strong {background-color:#999999;}
+table.calendar_type tbody tr td div.tour.end strong.state_start {display:none;}
+/* title */
+div.calendar_type_title {margin-bottom:2rem; font-size:3rem; text-align:center;}
+div.calendar_type_title a.btn_arrow {display:inline-block; width:4.4rem; height:4.4rem; border-radius:4.4rem; background-color:#324fa6;; color:#fff;}
+div.calendar_type_title a.btn_arrow i {font-size:3.6rem;}
+/*
+@media screen and (max-width:740px) {
+    .btn_box {margin-top:2rem;}
+    .btn_box ul li { margin-left:1rem;}
+    .btn_box ul li:first-child { margin-left:0;}
+    .btn_box.box2 ul li {width:calc((100% - 1rem) / 2);}
+    .btn_box.box3 ul li {width:calc((100% - 2rem) / 3);}
+    .btn_box.box4 ul li {width:calc((100% - 1rem) / 2); margin-bottom:1rem;}
+    .btn_box.box4 ul li:nth-child(2n+1) {margin-left:0;}
+
+}
+*/

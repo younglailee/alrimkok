@@ -1,0 +1,55 @@
+/**
+* 파일명 :	common.css
+* 작성자 :	Alpha-Edu (lucas@alpha-edu.co.kr)
+* 작성일 :	2014. 11. 20
+* 내  용 :	common.css 파일은 관리자모드/사용자모드 등 같은 홈페이지에 2개 이상의 레이아웃(프레임)이 존재할때, 공통으로 사용되는 CSS 속성을 작성한 파일입니다.
+			각각의 홈페이지 마다 고유의 common.css 파일이 존재할 수 있으나, 하나의 홈페이지에는 반드시 1개의 파일만 존재합니다.
+			개별 작업자마다 자주사용하는 accessbility, hidden, width, height, margin, padding 등의 CSS 속성을 별도로 관리할 수 있습니다.
+*/
+@charset "utf-8";
+
+/**
+* .hidden
+* 화면상 출력 : N
+* 포커스 이동 : N
+* 스크린 리더 : Y
+*/
+.hidden {
+    display:inline !important;
+    visibility:hidden !important;
+    position:absolute !important;
+    width:0 !important;
+    height:0 !important;
+    margin:0 !important;
+    padding:0 !important;
+    background:none !important;
+    font-size:0 !important;
+    line-height:0 !important;
+    border:0 !important;
+    overflow:hidden !important; }
+
+/**
+* .accessibility
+* 화면상 출력 : N
+* 포커스 이동 : Y
+* 스크린 리더 : Y
+*/
+.accessibility {
+    display:block !important;
+    position:absolute !important;
+    top:-10000px !important;
+    left:-10000px !important;
+    z-index:10000 !important;
+    text-align:center !important;
+    font-size:1em !important; }
+
+.accessibility:hover,
+.accessibility:focus,
+.accessibility:active {
+    position:relative !important;
+    top:0 !important;
+    left:0 !important;
+    width:100% !important;
+    padding:5px 0 !important;
+    background:#efefef !important;
+    color:#000 !important; }

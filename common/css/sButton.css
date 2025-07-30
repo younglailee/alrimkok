@@ -1,0 +1,293 @@
+/**
+* 파일명 :	SbUTTON.css
+* 작성자 :	Alpha-Edu (lucas@alpha-edu.co.kr)
+* 작성일 :	2014. 11. 20
+* 내  용 :	<a />, <button /> 요소에 대해서 동일한 버튼 스타일을 적용
+*/
+
+@charset "utf-8";
+/**
+* init
+*/
+a.sButton,
+button.sButton {
+    position:relative;
+    display:inline-block;
+    width:auto;
+    margin:0;
+    padding:0;
+    border:0;
+    background:transparent;
+    cursor:pointer;
+    vertical-align:middle;
+    text-decoration:none;
+}
+
+button.sButton::-moz-focus-inner {
+    padding:0;
+    border:0;
+}
+
+a.sButton > span.sButton-container,
+button.sButton > span.sButton-container {
+    display:inline-block;
+    width:auto;
+    vertical-align:middle;
+}
+
+a.sButton > span.sButton-container > span.sButton-bg,
+button.sButton > span.sButton-container > span.sButton-bg {
+    display:inline-block;
+    width:auto;
+    vertical-align:middle;
+}
+
+/**
+* size
+*/
+
+/* normal */
+a.sButton,
+button.sButton {
+    height:35px;
+    line-height:35px;
+}
+
+a.sButton > span.sButton-container,
+button.sButton > span.sButton-container {
+    height:33px;
+    line-height:35px;
+}
+
+a.sButton > span.sButton-container > span.sButton-bg,
+button.sButton > span.sButton-container > span.sButton-bg {
+    height:33px;
+    line-height:35px;
+    padding:0 15px;
+}
+
+a.sButton > span.sButton-container > span.sButton-bg > span.text,
+button.sButton > span.sButton-container > span.sButton-bg > span.text {
+    font-size:12px;
+    font-weight:normal;
+}
+
+/* large */
+a.sButton.large,
+button.sButton.large {
+    *min-width:80px;
+    height:45px;
+    line-height:45px;
+}
+
+a.sButton.large > span.sButton-container,
+button.sButton.large > span.sButton-container {
+    height:43px;
+    line-height:45px;
+}
+
+a.sButton.large > span.sButton-container > span.sButton-bg,
+button.sButton.large > span.sButton-container > span.sButton-bg {
+    height:43px;
+    line-height:45px;
+    padding:0 25px;
+}
+
+a.sButton.large > span.sButton-container > span.sButton-bg > span.text,
+button.sButton.large > span.sButton-container > span.sButton-bg > span.text {
+    font-weight:bold;
+}
+
+/* small */
+a.sButton.small,
+button.sButton.small {
+    height:30px;
+    line-height:30px;
+}
+
+a.sButton.small > span.sButton-container,
+button.sButton.small > span.sButton-container {
+    height:28px;
+    line-height:30px;
+}
+
+a.sButton.small > span.sButton-container > span.sButton-bg,
+button.sButton.small > span.sButton-container > span.sButton-bg {
+    height:28px;
+    line-height:30px;
+    padding:0 8px;
+}
+
+a.sButton.small > span.sButton-container > span.sButton-bg > span.text,
+button.sButton.small > span.sButton-container > span.sButton-bg > span.text {
+    font-size:12px;
+    font-weight:normal;
+}
+
+/* tiny */
+a.sButton.tiny,
+button.sButton.tiny {
+    height:25px;
+    line-height:25px;
+}
+
+a.sButton.tiny > span.sButton-container,
+button.sButton.tiny > span.sButton-container {
+    height:23px;
+    line-height:25px;
+}
+
+a.sButton.tiny > span.sButton-container > span.sButton-bg,
+button.sButton.tiny > span.sButton-container > span.sButton-bg {
+    height:23px;
+    line-height:25px;
+    padding:0 5px;
+}
+
+a.sButton.tiny > span.sButton-container > span.sButton-bg > span.text,
+button.sButton.tiny > span.sButton-container > span.sButton-bg > span.text {
+    font-size:11px;
+    font-weight:normal;
+}
+
+/**
+* type (style)
+*/
+
+/* normal */
+a.sButton > span.sButton-container,
+button.sButton > span.sButton-container {
+    border:1px solid #d2d2d2;
+    background:#ffffff;
+}
+
+a.sButton > span.sButton-container > span.sButton-bg,
+button.sButton > span.sButton-container > span.sButton-bg {
+    background:linear-gradient(#ffffff, #fafafa);
+    background:-webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#fafafa));
+    background:-moz-linear-gradient(top,  #ffffff,  #fafafa);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff", endColorstr="#fafafa");
+}
+
+a.sButton > span.sButton-container > span.sButton-bg > span.text,
+button.sButton > span.sButton-container > span.sButton-bg > span.text {
+    color:#626262;
+}
+
+/* primary */
+a.sButton.primary > span.sButton-container,
+button.sButton.primary > span.sButton-container {
+    border:1px solid #de234f;
+    background-color:#e95a72;
+}
+
+a.sButton.primary > span.sButton-container > span.sButton-bg,
+button.sButton.primary > span.sButton-container > span.sButton-bg {
+    background:linear-gradient(#e95a72, #e95a72);
+    background:-webkit-gradient(linear, left top, left bottom, from(#e95a72), to(#e95a72));
+    background:-moz-linear-gradient(top,  #e95a72,  #e95a72);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#e95a72", endColorstr="#e95a72");
+}
+
+a.sButton.primary > span.sButton-container > span.sButton-bg > span.text,
+button.sButton.primary > span.sButton-container > span.sButton-bg > span.text {
+    color:#ffffff;
+}
+
+/* active */
+a.sButton.active > span.sButton-container,
+button.sButton.active > span.sButton-container {
+    border:1px solid #505050;
+    background-color:#6e6e6e;
+}
+
+a.sButton.active > span.sButton-container > span.sButton-bg,
+button.sButton.active > span.sButton-container > span.sButton-bg {
+    background:linear-gradient(#6e6e6e, #6e6e6e);
+    background:-webkit-gradient(linear, left top, left bottom, from(#6e6e6e), to(#6e6e6e));
+    background:-moz-linear-gradient(top,  #6e6e6e,  #6e6e6e);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#6e6e6e", endColorstr="#6e6e6e");
+}
+
+a.sButton.active > span.sButton-container > span.sButton-bg > span.text,
+button.sButton.active > span.sButton-container > span.sButton-bg > span.text {
+    color:#ffffff;
+}
+
+/* info */
+a.sButton.info > span.sButton-container,
+button.sButton.info > span.sButton-container {
+    border:1px solid #3e77b8;
+    background-color:#538fd4;
+}
+
+a.sButton.info > span.sButton-container > span.sButton-bg,
+button.sButton.info > span.sButton-container > span.sButton-bg {
+    background:linear-gradient(#538fd4, #538fd4);
+    background:-webkit-gradient(linear, left top, left bottom, from(#538fd4), to(#538fd4));
+    background:-moz-linear-gradient(top,  #538fd4,  #538fd4);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#538fd4", endColorstr="#538fd4");
+}
+
+a.sButton.info > span.sButton-container > span.sButton-bg > span.text,
+button.sButton.info > span.sButton-container > span.sButton-bg > span.text {
+    color:#ffffff;
+}
+
+/* success */
+a.sButton.success > span.sButton-container,
+button.sButton.success > span.sButton-container {
+    border:1px solid #5ca03f;
+    background-color:#7ab770;
+}
+
+a.sButton.success > span.sButton-container > span.sButton-bg,
+button.sButton.success > span.sButton-container > span.sButton-bg {
+    background:linear-gradient(#7ab770, #7ab770);
+    background:-webkit-gradient(linear, left top, left bottom, from(#7ab770), to(#7ab770));
+    background:-moz-linear-gradient(top,  #7ab770,  #7ab770);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#7ab770", endColorstr="#7ab770");
+}
+
+a.sButton.success > span.sButton-container > span.sButton-bg > span.text,
+button.sButton.success > span.sButton-container > span.sButton-bg > span.text {
+    color:#ffffff;
+}
+
+/* disabled */
+a.sButton.disabled > span.sButton-container,
+button.sButton.disabled > span.sButton-container {
+    border:1px solid #d2d2d2;
+    background-color:#f5f5f5;
+}
+
+a.sButton.disabled > span.sButton-container > span.sButton-bg,
+button.sButton.disabled > span.sButton-container > span.sButton-bg {
+    background:linear-gradient(#f5f5f5, #f5f5f5);
+    background:-webkit-gradient(linear, left top, left bottom, from(#f5f5f5), to(#f5f5f5));
+    background:-moz-linear-gradient(top,  #f5f5f5,  #f5f5f5);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#f5f5f5", endColorstr="#f5f5f5");
+}
+
+a.sButton.disabled > span.sButton-container > span.sButton-bg > span.text,
+button.sButton.disabled > span.sButton-container > span.sButton-bg > span.text {
+    color:#b4b4b4;
+}
+
+/**
+* state
+*/
+a.sButton:hover > span.sButton-container,
+button.sButton:hover > span.sButton-container {
+    border-color:#000000!important;
+}
+
+a.sButton:hover > span.sButton-container > span.sButton-bg,
+button.sButton:hover > span.sButton-container > span.sButton-bg {
+    background:#282828!important;
+}
+
+a.sButton:hover > span.sButton-container > span.sButton-bg > span.text,
+button.sButton:hover > span.sButton-container > span.sButton-bg > span.text {
+    color:#ffffff!important;
+}

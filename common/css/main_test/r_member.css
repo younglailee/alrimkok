@@ -1,0 +1,413 @@
+@charset "utf-8";
+#cmm_sub { width:100%; }
+.boxB { margin-bottom:0; }
+.login_area { left:50%; transform:translate(-50%, 0); margin:120px 0 150px; }
+
+@media all and (max-width:1480px) {
+    .login_area { position:relative; margin:105px 0; width:650px; }
+    
+    .mmb_login { margin:0; padding:40px 30px; box-sizing:border-box; }
+    .mmb_login > p:nth-child(1) { margin:0 0 30px; font-size:24px; height:auto; }
+    .mmb_login input[type="text"], .mmb_login input[type="password"] { height:55px; }
+    .mmb_login input[type="password"] { margin-bottom:0; }
+    .mmb_login label { margin:19px 0 40px; padding-left:23px; height:auto; font-size:15px; background-size:18px; }
+    .mmb_login input[type="checkbox"]:checked + label { background-size:18px; }
+    .loginform_find_account { margin-top:19px; font-size:15px !important; }
+    .login_join_box { margin-top:10px; }
+    
+}
+
+@media all and (max-width:1024px) {
+    .login_area { margin:131px 0 95px; max-width:320px; }
+    .mmb_login form { width:100%; }
+    .mmb_login input[type="text"], .mmb_login input[type="password"] { width:100% !important; }
+    .mmb_login input[type="submit"] { width:100%; height:45px; font-size:14px; background:#2342B5; }
+    .mmb_login label { background-position-y:2px; }
+    .mmb_login input[type="checkbox"]:checked + label { background-position-y:2px; }
+    .login_join_box { margin:-10px -30px 0; }
+    .login_join_box span:nth-child(1) { padding-right:0; font-size:14px; letter-spacing:-0.35px; }
+    .login_join_box span:nth-child(2) { font-size:14px; letter-spacing:-0.35px; }
+    .mmb_login div#btn_wrap button { height:45px; width:100%; margin-top:30px; font-size:14px; }
+}
+
+@media all and (max-width:719px) {
+    #cmm_sub { margin:0; }
+    .login_area { display:flex; align-items:center; justify-content:center; background:#fff; border-radius:22px; }
+    .login_keep_box { margin:19px 0 40px; display:flex; justify-content:space-between; align-items:center; }
+    .mmb_login label { margin:0; }
+    .loginform_find_account { margin-top:0; }
+    .login_join_box { display:flex; justify-content:center; align-items:center; }
+    .login_join_box span:nth-child(1) { padding-right:0; font-size:14px; letter-spacing:-0.35px; color:#4b4b4b; font-weight:500; }
+    .login_join_box span:nth-child(2) { font-size:14px; letter-spacing:-0.35px; color:#2544B6; font-weight:500; text-decoration:underline; }
+    
+    .mmb_login > p:nth-child(1) { font-weight:bold; font-family:"notoLight"; }
+    .mmb_login input[type="text"], .mmb_login input[type="password"] { color:#848484; background:#fff; border:1px solid #ddd; }
+    .mmb_login input[type="text"]::placeholder, .mmb_login input[type="password"]::placeholder { color:#848484; }
+    .mmb_login input[type="text"]::-moz-placeholder, .mmb_login input[type="password"]::-moz-placeholder { color:#848484; }
+    .mmb_login input[type="text"]::-webkit-input-placeholder, .mmb_login input[type="password"]::-webkit-input-placeholder { color:#848484; }
+}
+
+@media all and (max-width:359px) {
+    .login_area { width:90%; }
+    .mmb_login { padding:30px 20px; }
+    .login_join_box { margin:-10px -20px 0; }
+}
+
+/* -------------------- 아이디 찾기 -------------------- */
+#cmm_sub > .find_id { position:relative; left:50%; transform:translate(-50%, 0); margin:120px 0 150px; }
+
+@media all and (max-width:1480px) {
+    #cmm_sub > .find_id { margin:105px 0; width:650px; }
+    .find_id .mmb_login { padding:40px 30px 50px; }
+    .find_id .mmb_login > p:nth-child(2) { font-size:14px; }
+    .find_id #btn_wrap + .login_join_box { margin-top:25px; }
+}
+
+@media all and (max-width:1024px) {
+    .find_id .mmb_login { padding:40px 30px; }
+    #cmm_sub > .find_id { margin:131px 0 95px; max-width:320px; }
+}
+
+@media all and (max-width:719px) {
+    .find_id .mmb_login > p:nth-child(2) { border-bottom:0; padding-bottom:0; }
+}
+
+@media all and (max-width:359px) {
+    #cmm_sub > .find_id { width:90%; }
+    .find_id .mmb_login { padding:40px 20px; }
+}
+
+/* -------------------- 비밀번호 찾기 -------------------- */
+#cmm_sub > .find_pw { position:relative; left:50%; transform:translate(-50%, 0); margin:120px 0 150px; }
+
+@media all and (max-width:1480px) {
+    #cmm_sub > .find_pw { margin:105px 0; width:650px; }
+    .find_pw .mmb_login { padding:40px 30px 50px; width:100%; }
+    .find_pw .mmb_login > p:nth-child(2) { font-size:14px; }
+    .mmb_login table.tbl_find input#auth_btn { height:55px; }
+    .mmb_login table.tbl_find input#add_time { height:55px; }
+    .find_pw #btn_wrap { margin-top:24px; }
+    .find_pw .pw_con { height:auto !important; }
+    .find_pw .mmb_login { height:auto; }
+    
+}
+
+@media all and (max-width:1024px) {
+    #cmm_sub > .find_pw { margin:131px 0 95px; max-width:320px;}
+    .find_pw .mb_tel_wrap { display:flex; justify-content:flex-start; align-items:center; width:100% !important; }
+    .find_pw #mb_tel { width:100% !important; padding:0 15px 0 20px; }
+    .find_pw #auth_btn { flex-shrink:0; width:60px !important; }
+    .find_pw #auth_td { display:flex; justify-content:flex-start; align-items:center; width:100% !important; }
+    .find_pw #minutes { flex-shrink:0; width:auto !important; margin-left:6px !important; }
+    .find_pw #seconds { flex-shrink:0; width:auto !important; margin-right:6px !important; }
+    .find_pw #add_time { flex-shrink:0; width:60px !important; }
+    .find_pw #auth_no { margin-bottom:0; width:100% !important; }
+    .mmb_login table.tbl_find input#add_time { top:0px; }
+}
+
+@media all and (max-width:719px) {
+    .find_pw .mmb_login > p:nth-child(2) { border-bottom:0; padding-bottom:0; }
+    .mmb_login table.tbl_find input#auth_btn { position:relative; top:-5px; color:#2342B5; border:1px solid #2342B5; }
+    .mmb_login table.tbl_find input#add_time { position:relative; top:0; color:#848484; border:1px solid #ddd; }
+    .find_pw .mmb_login label { padding-left:0; }
+    .find_pw .mmb_login table.tbl_find span { font-family:"notoMedium", sans-serif; font-size:16px; }
+    .find_pw .mmb_login form { margin-bottom:0; }
+}
+
+@media all and (max-width:359px) {
+    #cmm_sub > .find_pw { width:90%; }
+    .find_pw .mmb_login { padding:40px 20px; }
+    .mmb_login input[type="text"], .mmb_login input[type="password"] { padding:0 15px !important; font-size:15px !important; }
+}
+
+/* -------------------- 비밀번호 변경 -------------------- */
+.mmb_login_pw.bgOn::after { display:none; }
+.find_pw + .mmb_login { position:absolute; width:0 !important; height:0; margin:0; padding:0; }
+.mmb_login .popup { margin:0; transform:translate(-50%, -50%); }
+
+@media all and (max-width:1480px) {
+    .mmb_login .popup p { font-size:32px; }
+    #new_pass { height:50px; }
+    #new_pass2 { height:50px; }
+    .mmb_login .popup { width:650px; padding:40px 30px; height:auto; }
+    .mmb_login .popup ul { margin:15px 0; }
+    .mmb_login .popup div { display:flex; justify-content:space-between; }
+    .mmb_login .popup div button:nth-child(1) { margin-top:35px; width:calc(50% - 4px); height:60px; }
+    .mmb_login .popup div button:nth-child(2) { margin-top:35px; width:calc(50% - 4px); height:60px; }
+}
+
+@media all and (max-width:1024px) {
+    .mmb_login .popup > button { top:-40px; }
+    .mmb_login .popup p { font-size:24px; }
+    .mmb_login .popup { width:320px; }
+}
+
+@media all and (max-width:359px) {
+    .mmb_login .popup { width:90%; padding:40px 20px; }
+}
+
+/* -------------------- 회원가입 -------------------- */
+.mb15 { margin-bottom:15px !important; }
+#join_wrap { position:relative; left:50%; transform:translate(-50%, 0); margin:60px auto 110px !important; padding:0 20px; box-sizing:border-box; max-width:1440px; }
+#join_wrap .mmb_process li:nth-child(3) p { padding-top:13px; }
+
+#join_wrap .mmb_join02 { padding:0; }
+#join_wrap .mmb_join02 .link { width:100%; }
+#join_wrap .mmb_join02 .link div { width:49%; }
+#join_wrap .mmb_join02 .link div > a { display:flex; justify-content:center; align-items:center; }
+#join_wrap .mmb_join02 .link div:nth-child(1) a { width:100%; }
+#join_wrap .mmb_join02 .link div:nth-child(2) a { width:100%; }
+#join_wrap .mmb_join02 .link div img { padding:0; }
+#join_wrap .mmb_join02 .link div:nth-child(1) p { padding:0 0 0 40px; }
+#join_wrap .mmb_join02 .link div:nth-child(2) p { padding:0 0 0 40px; }
+
+.join_table .r_wrap { display:flex; justify-content:flex-start; align-items:center; }
+
+@media all and (max-width:1480px) {
+    
+    #join_wrap .title { margin-bottom:20px; font-size:28px; }
+    #join_wrap .title img { width:36px; height:36px; margin-right:10px; }
+    #join_wrap .mmb_process { margin:0 0 55px; }
+    #join_wrap .mmb_process li p { font-size:18px; }
+    #join_wrap .mmb_join01 span { padding-bottom:14px; font-size:20px; }
+    #join_wrap .mmb_join01 .all label { background-position-y:4px; height:24px; }
+    #join_wrap .mmb_join01 .all input:checked + label { background-position-y:4px; }
+    #join_wrap .mmb_join01 .agree label { background-position-y:3px; height:26px; }
+    #join_wrap .mmb_join01 .agree input:checked + label { background-position-y:3px; }
+    #join_wrap .mmb_join01 .box { margin-bottom:40px; padding:15px; font-size:14px; }
+    #join_wrap .mmb_join01 h5 { padding-bottom:15px; margin-bottom:15px; }
+    #join_wrap .mmb_join01 .btn input { width:100px; height:45px; font-size:14px; }
+    
+    #join_wrap .mmb_join02 .box { margin-top:14px; padding:20px 40px 25px; height:auto; }
+    #join_wrap .mmb_join02 .box li:last-child { margin-bottom:0; }
+    #join_wrap .mmb_join02 .box h4 { font-size:16px; }
+    #join_wrap .mmb_join02 .box ul { margin-top:7px; }
+    #join_wrap .mmb_join02 .box li { font-size:14px; }
+    
+    .join_table #mb_addr { width:722px !important; }
+    .join_table #mb_addr2 { width:722px !important; }
+    
+    #cmm_sub div.submit_wrap > input { width:300px !important; height:50px !important; font-size:14px !important; }
+}
+
+@media all and (max-width:1024px) {
+    #join_wrap { margin:110px auto !important; }
+    .join_table tr { padding:12px 0; display:block; }
+    .join_table th { padding:0 0 7px; display:block; background:transparent; }
+    .join_table td { padding:0; display:block; }
+    .join_table input[type="text"], .join_table input[type="password"] { width:100%; height:50px; box-sizing:border-box; }
+    .join_table #mb_id { width:233px; }
+    .join_table #id_check_btn { margin-left:-4px; width:87px; height:50px; }
+    .join_table td p { margin:7px 0 0 0 !important; font-size:15px; word-break:keep-all; }
+    .join_table #person { width:100% !important; height:50px; box-sizing:border-box; }
+    .join_table .phone_wrap { display:flex; justify-content:space-between; align-items:center; margin:0 -4px }
+    .join_table .phone_wrap > input { width:33.333%; margin:0 4px; height:50px; }
+    .join_table #address01 { width:233px !important; height:50px; box-sizing:border-box; }
+    .join_table #address01 + input { margin-left:-4px; width:87px; height:50px; }
+    .join_table .email_wrap { display:flex; align-items:center; flex-wrap:nowrap; }
+    .join_table .email_wrap #user_email { width:155px; margin-right:4px; }
+    .join_table .email_wrap #mb_email2 { width:155px; margin:0 12px 0 4px; }
+    .join_table #uniform-mail_selector_user { margin-left:0; width:100% !important; height:50px; box-sizing:border-box; }
+    .join_table #uniform-mail_selector_user > span { width:100% !important; height:50px; line-height:50px; }
+    .join_table #mail_selector_user { width:100% !important; height:50px; }
+    .join_table #mb_addr { width:100% !important; }
+    .join_table #mb_addr2 { width:100% !important; }
+    
+    #join_wrap .mmb_join02 .box { padding:20px 20px 25px; }
+    #join_wrap .mmb_join02 .link div { width:100%; float:unset; }
+    #join_wrap .mmb_join02 .link div > a { margin-bottom:10px; padding:27px 0; height:auto; }
+    #join_wrap .mmb_join02 .link div img { width:38px; height:45px; }
+    #join_wrap .mmb_join02 .link div:nth-child(1) p { padding:0 0 0 13px; font-size:13px; }
+    #join_wrap .mmb_join02 .link div:nth-child(2) p { padding:0 0 0 13px; font-size:13px; }
+    #join_wrap .btn { margin-top:0px; }
+    
+}
+
+@media all and (max-width:719px) {
+    .mmb_process { display:flex; align-items:flex-end; }
+    .mmb_process {float:left; width:100%; margin:10px 0 55px;}
+    .mmb_process li {float:left; width:33.333%; padding-right:0%; box-sizing:border-box;}
+    .mmb_process li p {width:100%; padding-bottom:10px; font-family:"notoMedium"; text-align:center; border-bottom:1px solid #eaeff4;}
+    .mmb_process li.on p {color:#2342B5; border-bottom:1px solid #2342B5;}
+    .mmb_process li.on p::after {position:relative; top:-15px; display:inline-block; width:6px; height:6px; margin-left:4px; content:""; background:#2342B5;
+        -webkit-border-radius:3px; /*Safari, Chrome*/
+        -moz-border-radius:3px; /*Firefox*/
+        border-radius:3px;
+    }
+    
+    #join_wrap .mmb_process li p { font-size:16px; }
+    #join_wrap .mmb_join01 { padding:0; }
+    #join_wrap .mmb_join01 .all { top:0; right:0; }
+    #join_wrap .btn { display:flex; justify-content:center; }
+    #join_wrap .mmb_join01 .btn input { margin:0 4px; }
+    #join_wrap .mmb_join01 .all label { font-size:16px; background-position-y:6px; }
+    
+    .join_table .r_wrap { flex-direction:column; align-items:flex-start; }
+    .join_table .r_wrap input { margin-left:0 !important; }
+    .join_table td { font-size:15px; }
+    .join_table #id_check_btn { font-size:15px; }
+    .join_table .email_wrap { position:relative; padding-bottom:58px; }
+    .join_table .email_wrap #user_email { width:50%; }
+    .join_table .email_wrap #mb_email2 { width:50%; margin-right:0; }
+    .join_table #uniform-mail_selector_user { position:absolute; bottom:0; left:0; }
+    
+}
+
+@media all and (max-width:415px) {
+    #join_wrap .mmb_join02 .box { margin-bottom:40px; }
+}
+
+@media all and (max-width:375px) {
+    .join_table #mb_id { width:193px; }
+    .join_table #address01 { width:193px !important; }
+    .join_table #address01 + input { font-size:15px; }
+    
+}
+
+/* -------------------- 비밀번호 재설정 -------------------- */
+.mmb_mypage .popup { margin:20px 0 0 0; transform:translate(-50%, -50%); height:auto; }
+.mmb_mypage .popup > button { top:-45px; width:40px; text-align:center; }
+.mmb_mypage .popup > button::after { width:100%; }
+
+@media all and (max-width:1024px) {
+    .mmb_mypage .popup { padding:40px 30px 0; max-width:320px; width:90%; max-height:500px; height:80vh; height:calc(var(--vh, 1vh) * 80); overflow-y:auto; box-sizing:border-box; }
+    .mmb_mypage .popup p { font-size:24px; }
+    .mmb_mypage .popup input { width:100%; }
+    .mmb_mypage .popup ul { margin:5px 0 15px; }
+    .mmb_mypage .popup div { padding-bottom:40px; }
+    .mmb_mypage .popup div button:nth-child(1) { width:100%; height:60px; font-size:16px; }
+    .mmb_mypage .popup > button {
+        top:10px; right:12px; /*width: 20px;*/ height:20px; font-size:13px; line-height:20px; text-align:center; cursor:pointer;
+        border-radius:0.25rem; background-color:lightgray; position:absolute; color:#222;
+    }
+    .mmb_mypage .popup > button::after { display:none; }
+    .mmb_mypage .popup > button.close_btn { display:none; }
+}
+
+@media all and (max-width:359px) {
+    .mmb_mypage .popup { padding:40px 20px 0; width:95%; }
+}
+
+/* -------------------- 최초 인증 -------------------- */
+#cmm_sub.ctf { padding:0 20px; max-width:1440px; box-sizing:border-box; }
+#cmm_sub.ctf > div { margin:60px auto 110px; }
+#cmm_sub.ctf .mmb_join01 .btn { margin-bottom:0 !important; }
+#cmm_sub.ctf #all02 + label { display:none; }
+
+#cmm_sub.ctf .mmb_join02 .link { width:100%; }
+#cmm_sub.ctf .mmb_join02 .link div { width:49%; }
+#cmm_sub.ctf .mmb_join02 .link div a { width:100%; }
+
+@media all and (max-width:1480px) {
+    #cmm_sub.ctf .title { font-size:28px; }
+    #cmm_sub.ctf .title img { position:relative; top:-2px; margin-right:10px; width:34px; height:34px; }
+    #cmm_sub.ctf .mmb_process { margin-top:0; }
+    #cmm_sub.ctf .mmb_process li p { font-size:18px; }
+    #cmm_sub.ctf .mmb_join01 .all { margin-top:3px; }
+    #cmm_sub.ctf .mmb_join01 .all + h4 { margin-bottom:14px; }
+    #cmm_sub.ctf .mmb_join01 .all label { background-position-y:4px; height:26px; }
+    #cmm_sub.ctf .mmb_join01 .box { margin-bottom:10px; padding:15px; font-size:14px; }
+    #cmm_sub.ctf .mmb_join01 .agree label { margin-bottom:40px; background-position-y:4px; height:26px; }
+    #cmm_sub.ctf .mmb_join01 h4 { margin:0 0 7px; }
+    #cmm_sub.ctf .mmb_join01 .btn { margin-top:20px; }
+    
+    #cmm_sub.ctf .mmb_join02 { margin-bottom:0; }
+    #cmm_sub.ctf .mmb_join02 .link div a { display:flex; justify-content:center; align-items:center; }
+    #cmm_sub.ctf .mmb_join02 .link div img { padding:0; }
+    #cmm_sub.ctf .mmb_join02 .link div p { padding:0 0 0 40px; }
+    #cmm_sub.ctf .mmb_join02 .box { margin-top:14px; padding:20px 40px 25px; height:auto; }
+    #cmm_sub.ctf .mmb_join02 .box h4 { font-size:16px; }
+    #cmm_sub.ctf .mmb_join02 .box ul { margin-top:7px; }
+    #cmm_sub.ctf .mmb_join02 .box li { margin-bottom:8px; font-size:14px; }
+    #cmm_sub.ctf .mmb_join02 .box li:last-child { margin-bottom:0; }
+}
+
+@media all and (max-width:1024px) {
+    #cmm_sub.ctf > div { margin:110px auto !important }
+    #cmm_sub.ctf .title { font-size:24px; }
+    #cmm_sub.ctf .mmb_process { height:48px; }
+    #cmm_sub.ctf .mmb_process li { width:50%; }
+    #cmm_sub.ctf .mmb_process li p { font-size:18px; }
+    #cmm_sub.ctf .mmb_join01 { padding:0; }
+    #cmm_sub.ctf .mmb_join01 .all { position:unset; }
+    #cmm_sub.ctf .mmb_join01 .btn input { float:unset; width:100px; height:45px; font-size:14px; color:#fff; }
+    
+    #cmm_sub.ctf .mmb_join02 .link div { float:unset; width:100%; }
+    #cmm_sub.ctf .mmb_join02 .link div a { margin-bottom:10px; padding:27px 0; height:auto; }
+    #cmm_sub.ctf .mmb_join02 .link div img { width:38px; height:45px; }
+    #cmm_sub.ctf .mmb_join02 .link div p { padding:0 0 0 13px; font-size:13px; }
+}
+
+@media all and (max-width:719px) {
+    #cmm_sub.ctf .mmb_join02 { padding:0; }
+    #cmm_sub.ctf .mmb_process li p { font-size:16px; }
+}
+
+/* -------------------- 마이페이지 -------------------- */
+#cmm_sub.mp { padding:0 20px; max-width:1440px; box-sizing:border-box; }
+#cmm_sub.mp > div { margin:60px auto 110px; }
+#address01 { border:1px solid #DDDDDD; }
+#address02 { border:1px solid #DDDDDD; }
+
+@media all and (max-width:1480px) {
+    #cmm_sub.mp .title { margin-bottom:-20px; font-size:28px; }
+    #cmm_sub.mp .title > img { position:relative; top:-2px; margin-right:10px; width:35px; height:35px; }
+}
+
+@media all and (max-width:1024px) {
+    #cmm_sub.mp > div { margin:110px auto 50px !important }
+    
+    .info_table tr { display:flex; flex-direction:column; }
+    .info_table th { padding:13px 0 7px; background:#fff; font-size:16px; }
+    .info_table td { padding:0 0 12px; font-size:16px; }
+    .info_table input[type="text"], .info_table input[type="password"] { width:100%; box-sizing:border-box; height:50px; }
+    .info_table input[readonly] { padding-left:0; height:auto; }
+    .info_table input[type="button"] { margin-left:0px; }
+    .email_wrap { display:flex; align-items:center; }
+    #email { margin-right:4px; width:155px; height:50px; }
+    #mail2 { margin:0 10px 0 4px; width:155px; height:50px; }
+    
+    #uniform-mail_selector { width:100% !important; height:50px; box-sizing:border-box; }
+    #uniform-mail_selector > span { width:100% !important; height:50px; line-height:50px; }
+    #mail_selector { width:100% !important; height:50px; line-height:50px; }
+    
+    #address01 { padding-left:10px; height:48px; line-height:48px; }
+    #address01 + input[type="button"] { margin-left:5px; height:50px; line-height:50px !important; }
+    .join_table #address01 + input[type="button"] { height:50px; line-height:50px !important; width:78px; }
+    #address02 { padding-left:10px; width:100% !important; height:50px; line-height:50px !important; }
+    #address03 { width:100% !important; line-height:50px !important; }
+}
+
+@media all and (max-width:719px) {
+    .email_wrap { flex-wrap:wrap; }
+    #email { width:calc(50% - 12px); }
+    #mail2 { width:calc(50% - 12px); margin-right:0; }
+    #uniform-mail_selector { margin:7px 0 0 0; width:100% !important; }
+    #cmm_sub div.submit_wrap > input { width:100% !important; }
+}
+
+/* -------------------- 비밀번호 변경 -------------------- */
+.modify_info .popup { margin:20px 0 0 0; transform:translate(-50%, -50%); height:auto; }
+.modify_info .popup > button { top:-45px; width:40px; text-align:center; }
+.modify_info .popup > button::after { width:100%; }
+.modify_info .popup div button { width:100%; }
+
+@media all and (max-width:1024px) {
+    .modify_info .popup { padding:40px 30px 0; max-width:320px; width:90%; max-height:500px; height:80vh; height:calc(var(--vh, 1vh) * 80); overflow-y:auto; box-sizing:border-box; }
+    .modify_info .popup p { font-size:24px; }
+    .modify_info .popup input { width:100%; }
+    .modify_info .popup ul { margin:5px 0 15px; }
+    .modify_info .popup div { margin-top:20px; height:100px; }
+    .modify_info .popup div button { width:100%; height:60px; font-size:16px; }
+    .modify_info .popup > button {
+        top:10px; right:12px; width:20px; height:20px; font-size:13px; line-height:20px; text-align:center; cursor:pointer;
+        border-radius:0.25rem; background-color:lightgray; position:absolute; color:#222;
+    }
+    .modify_info .popup > button::after { display:none; }
+}
+
+@media all and (max-width:359px) {
+    .modify_info .popup { padding:40px 20px 0; width:95%; }
+}
+
+.modify_pw { position:fixed; }

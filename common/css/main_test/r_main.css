@@ -1,0 +1,13 @@
+@charset "utf-8";
+
+@media all and (max-width:1480px) {
+
+}
+
+@media all and (max-width:1024px) {
+    div.layer_popup_main { display:none; }
+}
+
+@media all and (max-width:719px) {
+
+}

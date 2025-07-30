@@ -1,0 +1,39 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+body {
+    font-family:"Noto Sans KR", sans-serif !important;
+}
+@font-face {
+    font-family:'GmarketSansMedium';
+    src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight:normal;
+    font-style:normal;
+}
+footer .link {margin-bottom:16px; padding-bottom:0px;}
+footer address span {margin-right:10px;}
+footer p {margin-bottom:50px;}
+footer a[href="http://pf.kakao.com/_pzUxmT"] {bottom:186px;}
+footer a[href="#cmm_wrap"] {bottom:98px;}
+
+.modal_dd { position:fixed; left:0; top:0; width:100%; height:100%; background-color:rgba(0, 0, 0, 0.5); opacity:0; visibility:hidden; transform:scale(1.1); transition:visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s; }
+.modal-content_dd { position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); background-color:white; padding:47px; width:1200px; height:600px; border-radius:0.5rem; }
+.close-button_dd { float:right; width:1.5rem; line-height:1.5rem; text-align:center; cursor:pointer; border-radius:0.25rem; background-color:lightgray; position:absolute; top:15px; right:15px; }
+.close-button_dd:hover { background-color:darkgray; }
+.show-modal_dd { opacity:1; visibility:visible; transform:scale(1.0); transition:visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s; z-index:99; }
+.modal_bg1_dd { height:65px; background:#E8EBF8; border-radius:4px; margin-bottom:19px; font-size:24px; color:#2342B5; text-align:center; line-height:65px; font-weight:bold;}
+.modal_bg2_dd { height:470px; background:#F6F6F6; border:1px solid #DDDDDD; padding:25px; font-size:15px; }
+.modal_bg2_dd p { margin-bottom:5px; font-weight:bold; }
+
+.modal_rd { position:fixed; left:0; top:0; width:100%; height:100%; background-color:rgba(0, 0, 0, 0.5); opacity:0; visibility:hidden; transform:scale(1.1); transition:visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s; }
+.modal-content_rd { position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); background-color:white; padding:47px; width:1200px; height:600px; border-radius:0.5rem; }
+.close-button_rd { float:right; width:1.5rem; line-height:1.5rem; text-align:center; cursor:pointer; border-radius:0.25rem; background-color:lightgray; position:absolute; top:15px; right:15px; }
+.close-button_rd:hover { background-color:darkgray; }
+.show-modal_rd { opacity:1; visibility:visible; transform:scale(1.0); transition:visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s; z-index:99; }
+.modal_bg1_rd { height:65px; background:#E8EBF8; border-radius:4px; margin-bottom:19px; font-size:24px; color:#2342B5; text-align:center; line-height:65px; font-weight:bold; }
+.modal_bg2_rd { height:470px; background:#F6F6F6; border:1px solid #DDDDDD; padding:25px; font-size:15px; }
+.modal_bg2_rd p { margin-bottom:5px; font-weight:bold; }
+
+footer .link a:not(:last-child)::after {position:unset; right:0; display:unset; width:0; height:0;}
+
+@media all and (max-width:1024px) {
+    .layer_popup_main { display: none; }
+}

@@ -1,0 +1,65 @@
+@charset "utf-8";
+
+.section1 { background-position: right; }
+.section2, .section3, .section4, .section5, .section6, .section7 { overflow: hidden; }
+.m_auto { margin: 0 auto; }
+
+@media all and (min-width : 1921px){
+    .section1 { background: transparent url('/common/img/pc/new_lms_guide.png') no-repeat top right/cover; }
+}
+
+@media all and (max-width : 1480px){
+    #new_cmm_sub { padding-top: 110px; }
+    .section2, .section3, .section4, 
+    .section5, .section6, .section7 { padding: 100px 20px; box-sizing: border-box; }
+
+    .section2 > div { width: 100%; }
+    .section2 img { width: 100%; object-fit: contain; }
+    .section2 .sub_box { display: flex; align-items: center; width: 100%; height: auto; }
+    .section2 .left { flex-shrink: 0; margin: 0; padding: 40px 40px 0; width: 40%; box-sizing: border-box; }
+    .section2 .sub_box p { margin-bottom: 20px; }
+    .section2 .left > img { width: 260px; }
+    .section2 .right { flex-shrink: 0; width: 60%; }
+    .section2 .right > img { height: 100%; }
+
+    .section3 > div { width: 100%; }
+    .section3 img { width: 100%; object-fit: contain; }
+
+}
+
+
+@media all and (max-width : 1024px){
+    #new_cmm_sub { padding-top: 55px; }
+    .section1 { height: 582px; background-image: url('/common/img/tab/new_lms_guide.png'); background-size: cover; background-position: top right; }
+    .section1 button, .section4 button { width: 170px; height: 45px; line-height: 45px; font-size: 14px; }
+    .section2, .section3, .section4, 
+    .section5, .section6, .section7 { padding: 60px 20px; box-sizing: border-box; }
+    .title { margin-bottom: 24px; font-size: 24px;  word-break: keep-all; }
+    .title + p { margin-bottom: 40px; font-size: 14px !important;  word-break: keep-all; }
+
+    .section2 > div > img { margin: 0 auto; width: 502px; }
+    .section2 .sub_box { margin-top: 40px; flex-direction: column; }
+    .section2 .left { position: relative; padding: 30px; width: 100%; border-right: 0; }
+    .section2 .left::after { position: absolute; bottom: 0; left: 30px; width: calc(100% - 60px); height: 0; border-bottom: 3px dashed #6EBC73; display: block; content: ""; }
+    .section2 .left > .sub_title { font-size: 20px; margin-bottom: 13px; }
+    .section2 .left > p { font-size: 14px; }
+    .section2 .right { padding: 30px; width: 100%; box-sizing: border-box; }
+
+    .section3 .tab.mo { padding-top: 0; }
+    .section3 ul { margin: -8px 0 0; display: flex; justify-content: space-between; align-items: stretch; flex-wrap: wrap; }
+    .section3 ul > li { padding: 30px 10px; width: calc(50% - 4px); background: #fff; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+    .section3 ul > li:nth-child(2n) { margin: 0 0 8px 4px; }
+    .section3 ul > li:nth-child(2n+1) { margin: 0 4px 8px 0; }
+    .section3 ul > li > img { height: 45px; width: 55px; }
+    .section3 ul > li > p { margin: 15px 0 0; font-size: 16px; font-weight: 700; word-break: keep-all; }
+
+    .section4 { padding: 83px 20px; height: auto; }
+}
+
+@media all and (max-width : 719px){
+    .section1 { padding: 0 20px; background-image: url('/common/img/mo/new_lms_guide.png'); background-position: top center; box-sizing: border-box; }
+    .section2 > div > img { width: 100%; max-width: 322px; }
+    .section2 .left > img { width: 100%; max-width: 260px }
+    .section4 { padding: 70px 20px 60px; }
+}
+

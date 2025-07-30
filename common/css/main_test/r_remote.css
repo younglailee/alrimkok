@@ -1,0 +1,37 @@
+@charset "utf-8";
+
+
+@media all and (max-width : 1480px){
+    #new_cmm_sub { padding: 0 20px; }
+    .title { margin-bottom: 24px; font-size: 28px; }
+    .select a { height: 58px; line-height: 58px; }
+    .select { margin-bottom: 40px; }
+
+    .help_bg { padding: 70px 90px; height: auto; } 
+    .help_bg > .help { position: unset; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: stretch; } 
+    .help_bg .he_text { width: 100%; font-size: 20px; margin-bottom: 30px; }
+    .help_bg .pg_bg { width: calc(50% - 10px); }
+    .help_bg div:nth-of-type(2) { margin: 0 10px 0 0; }
+    .help_bg div:nth-of-type(3) { margin: 0 0 0 10px; }
+    .pg_bg { padding: 46px 0; height: auto; }
+    .pg_bg img { margin: 0 0 20px; width: 184px; height: 41px; object-fit: contain; }
+    .pg_bg a div, .pg_bg button { width: 184px; height: 45px; font-size: 14px; }
+}
+
+@media all and (max-width : 1024px){
+    #new_cmm_sub { padding: 110px 20px 0; }
+    .select { position: relative; flex-wrap: wrap; margin-bottom: 24px; }
+    .select a { width: calc(50% - 2px); }
+    .select a:nth-child(2) { position: relative; right: 1px; }
+    .select a:nth-child(3) { position: relative; top: -1px; }
+    .select::after { position: absolute; bottom: 1px; right: 1px; z-index: -1; width: 50%; height: 58px; border: 1px solid #ddd; background: #f6f6f6; display: block; content: ""; }
+
+    .help_bg { padding: 56px 20px; }
+    .help_bg .he_text { margin-bottom: 22px; }
+}
+
+@media all and (max-width : 719px){
+    .help_bg .pg_bg { width: 100%; }
+    .help_bg div:nth-of-type(2) { margin: 0 0 24px 0; }
+    .help_bg div:nth-of-type(3) { margin: 0; }
+}

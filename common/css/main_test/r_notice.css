@@ -1,0 +1,110 @@
+@charset "utf-8";
+div.pagination ul li.arrow a { background: url(/common/img/ico/sp_page.png) 0 0 #f0f0f0 no-repeat }
+div.pagination ul li.prev a { background-position: 0 -43px; }
+div.pagination ul li.next a { background-position: 1px -93px; }
+div.pagination ul li.begin a { background-position: 0 7px; }
+div.pagination ul li.end a { background-position: 1px -143px; } 
+
+@media all and (max-width : 1480px){
+    #new_cmm_sub { padding: 0 20px; }
+    .title { font-size: 28px; }
+    .title img { position: relative; top: -3px; margin-right: 10px; }
+    .select { margin-bottom: 30px; }
+    .select a { border-right: 0; height: 58px; line-height: 58px; }
+    .select a:last-child { border-right: 1px solid #ddd; }
+    .select .selected { border: 1px solid #2342B5; }
+    .notice_search_box { margin-bottom: 30px; padding: 30px 0; height: auto; }
+    .notice_search { height: auto; line-height: 40px; }
+    .notice_search form { position: relative; }
+    .searchbox_submit { top: 12px; right: 20px !important; }
+
+    .th_border { display: none; }
+    table.notice_table th { position: relative; }
+    table.notice_table th::after { position: absolute; top: 50%; right: 0; transform: translate(0,-50%); width: 1px; height: 20px; background: #c4c4c4; display: block; content: ""; }
+    table.notice_table th:last-child::after { display: none; }
+}
+
+@media all and (max-width : 1024px){
+    #new_cmm_sub { padding: 110px 20px 0; }
+    .title { margin-bottom: 25px; }
+    .select { flex-wrap: wrap; margin-bottom: 25px; }
+    .select a { width: calc(50% - 2px); }
+    .select a:nth-child(2) { border-right: 1px solid #ddd; border-left: 0; }
+    .select a:nth-child(3) { border-right: 1px solid #ddd; border-top: 0; }
+    .select a:nth-child(4) { border-left: 0; border-top: 0; }
+    .select a.safe { width: calc(50% - 2px); }
+    .select a.safe.selected { border: 1px solid #2342B5; }
+    .notice_search_box { margin-bottom: 25px; padding: 30px 20px; }
+    .notice_search_text { display: none; }
+    .notice_search { width: 100%; }
+    #sch_text { width: 100%; height: 38px; box-sizing: border-box; }
+    .notice_search form { width: 100%; }
+    .searchbox_submit { top: 11px; width: 16px; height: 16px; }
+
+    .count { display: none; }
+    .th_border { display: none; }
+    table.notice_table, table.notice_table tbody { display: block; width: 100%; }
+    table.notice_table thead { display: none; }
+    table.notice_table tr { position: relative; display: block; width: 100%; padding: 18px 0 !important; border-bottom: 1px solid #C4C4C4; }
+    table.notice_table tr td { display: block; width: 100%; padding: 0; border-bottom: 0; }
+    table.notice_table .no { text-align: left; }
+    table.notice_table .no .notice { width: 43px; height: 24px; font-size: 14px; text-align: center; }
+    table.notice_table td:nth-child(1) { display: block !important; }
+    table.notice_table td:nth-child(2) { margin: 7px 0 12px; padding-left: 0; }
+    table.notice_table td:nth-child(3) { display: block !important; position: absolute; bottom: 20px; right: 10px; width: fit-content;  }
+    table.notice_table td:nth-child(3) > a { margin-left: 7px; }
+    table.notice_table td:nth-child(4) { text-align: left; }
+    table.notice_table td:nth-child(5) { display: none !important; }
+}
+
+@media all and (max-width : 719px){
+    div.pagination ul li a { min-width: 20px; height: 20px; line-height: 20px; }
+    div.pagination ul li.prev a { background-position: -2px -44px; }
+    div.pagination ul li.next a { background-position: 0px -94px; }
+    div.pagination ul li.begin a { background-position: -2px 6px; }
+    div.pagination ul li.end a { background-position: 0px -144px; } 
+
+    div.pagination ul li.prev a:focus, div.pagination ul li.prev a:hover { background-position: -3px -44px }
+    div.pagination ul li.next a:focus, div.pagination ul li.next a:hover { background-position: 1px -94px }
+    div.pagination ul li.begin a:focus, div.pagination ul li.begin a:hover { background-position: -3px 6px }
+    div.pagination ul li.end a:focus, div.pagination ul li.end a:hover { background-position: 1px -144px }
+}
+
+
+
+
+/*** view ***/
+div.board_view div.view_paging > dl.prev > dt { background: url("/common/img/ico/ico_view_prev.gif") 30px 50% no-repeat; }
+div.board_view div.view_paging > dl.next > dt { background: url("/common/img/ico/ico_view_next.gif") 30px 50% no-repeat; }
+
+@media all and (max-width : 1480px){
+    .board_view { margin-top: 46px; }
+    .board_view .subject { font-size: 24px; }
+    .board_view .reg_date { margin-bottom: 4px; font-size: 14px; }
+}
+
+@media all and (max-width : 1024px){
+    .board_view { margin-top: 24px; }
+    .board_view .subject { font-size: 20px; }
+    .board_view .left dl { padding: 15px 0; }
+    .board_view .left dt { display: block; width: 100%; height: 25px; line-height: 25px; background: transparent; text-align: left; }
+    .board_view .left dd { display: block; padding: 5px 0 0; width: 100%; height: 25px; line-height: 25px; text-align: left; }
+    .board_view .content { padding: 16px 0 100px; }
+    .board_view .content img { width: 100%; object-fit: contain; }
+    .board_view .view_paging { margin-top: 0 !important; }
+    .board_view .view_paging dl { padding: 15px 0; }
+    .board_view .view_paging dt { display: block; padding: 0 0 0 20px !important; padding-bottom: 0 !important; height: 20px; line-height: 20px; }
+    .board_view .view_paging dd { 
+        display: block; padding: 4px 0 0 30px !important; width: 100%; height: 20px; line-height: 20px; box-sizing: border-box;
+        display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 1; overflow: hidden; white-space: normal; text-align: left; line-height: 18px;
+     }
+    .board_view .view_paging dd > a { display: block; text-align: left; line-height: 18px; }
+    div.board_view div.view_paging > dl.prev > dt { background: url("/common/img/ico/ico_view_prev.gif") 10px 50% no-repeat; }
+    div.board_view div.view_paging > dl.next > dt { background: url("/common/img/ico/ico_view_next.gif") 10px 50% no-repeat; }
+    .board_view .button { margin-top: 5px; }
+    .board_view .button a { display: block; width: 100px; height: 45px; line-height: 45px; padding: 0; font-size: 14px; }
+}
+
+@media all and (max-width : 719px){
+  
+}

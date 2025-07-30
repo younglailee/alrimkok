@@ -1,0 +1,29 @@
+@charset "utf-8";
+body { font-size: 16px; }
+a, div, input { -webkit-tap-highlight-color : transparent; }
+
+.payment_wrap { padding: 0 20px; }
+.payment_wrap.payment_m { font-size: 16px; }
+.payment_wrap.payment_m h1 { margin: 40px 0 14px; font-size: 24px; }
+.top_text { padding: 40px 20px 10px; text-align: left !important; }
+#card { position: relative; top: -3px; margin-right: 7px; width: 18px; height: 18px; }
+
+.payment_wrap .box { margin-bottom: 14px; height: 180px !important; }
+.method_wrap label { font-size: 16px; }
+.payment_wrap.payment_m .box { margin-top: 0; padding: 15px; font-size: 14px; }
+.payment_wrap div { margin-bottom: 0; }
+.payment_wrap.payment_m .agree label { font-size: 16px; background-size: 18px; background-position-y: 0px; height: 18px; line-height: 16px; margin-bottom: 0; }
+.payment_wrap.payment_m .agree input:checked + label { background-size: 18px; background-position-y: 0px; height: 18px; line-height: 16px; margin-bottom: 0; }
+
+.payment_wrap .price { margin-top: 30px; }
+.payment_wrap.payment_m .price { font-size: 32px; }
+.payment_wrap.payment_m em { font-size: 32px; }
+.payment_wrap.payment_m .price span { width: 110px; font-size: 16px; line-height: 38px; height: 40px; border-radius: 20px; }
+
+.btn_wrap { margin: 30px 0 !important; }
+.payment_wrap.payment_m .btn_wrap button { width: 100%; font-size: 20px; height: 60px; line-height: 60px; }
+.payment_wrap.payment_m .btn_wrap { margin: 30px 0 40px; }
+
+@media all and (max-width : 719px){
+    .payment_wrap.payment_m .box { height: 300px; }
+}

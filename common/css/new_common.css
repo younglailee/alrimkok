@@ -1,0 +1,482 @@
+@charset "utf-8";
+
+@import url(base.css);
+@import url(index.css);
+@import url(process.css);
+@import url(board.css);
+@import url(member.css);
+@import url(content.css);
+
+body {overflow-x:hidden;}
+
+/*--------------------------*/
+/* wrap */
+/*--------------------------*/
+
+/*@media screen and (min-width:416px) {*/
+@media screen and (min-width:429px) {
+    
+    #cmm_wrap {float:left; width:100%; min-width:1200px;}
+    
+}
+
+/*@media screen and (max-width:415px) {*/
+/* iPhone 12 Pro Max 뷰포트 대응 yllee 210602 */
+@media screen and (max-width:428px) {
+    
+    #cmm_wrap {float:left; width:100%; min-width:320px;}
+    
+    body.fixOn #cmm_wrap {position:fixed;}
+    body.fixOn #cmm_wrap::after {position:fixed; z-index:99; display:block; width:100%; height:100%; content:""; background:black; opacity:0.8;}
+    
+}
+
+/*--------------------------*/
+/* header */
+/*--------------------------*/
+
+/*@media screen and (min-width:416px) {*/
+@media screen and (min-width:429px) {
+    
+    header {position:relative; float:left; width:100%;}
+    
+    header .boxT {position:relative; z-index:999; float:left; width:100%; height:50px; background:#F5F5F5;}
+    header .boxT > div {position:relative; width:1474px; height:100%; margin:0 auto;}
+    
+    header .boxT h1 {display:none;}
+    
+    header .boxT .select {display:none;}
+    header .boxT .link {display:block !important;}
+    header .boxT .link a:nth-child(1) {position:absolute; left:0; top:0; display:block; width:150px; height:100%; padding-top:8px; box-sizing:border-box; font-family:"notoMedium"; font-size:20px; text-align:center; background:white;}
+    header .boxT .link a:nth-child(2) {position:absolute; left:150px; top:0; display:block; width:150px; height:100%; padding-top:8px; box-sizing:border-box; font-size:20px; color:white; text-align:center; background:#f8575f;}
+    
+    header .boxT .link_tomo {display:block !important;}
+    header .boxT .link_tomo a:nth-child(1) {position:absolute; left:0; top:0; display:block; width:150px; height:100%; padding-top:8px; box-sizing:border-box; font-size:20px; color:white; text-align:center; background:#279b33;}
+    header .boxT .link_tomo a:nth-child(2) {position:absolute; left:150px; top:0; display:block; width:150px; height:100%; padding-top:8px; box-sizing:border-box; font-family:"notoMedium"; font-size:20px; text-align:center; background:white;}
+    
+    header .boxT .member {position:absolute; right:0; top:13px;}
+    header .boxT .member a {position:relative; float:left; margin-left:50px; color:#606060; font-size:14px;}
+    header .boxT .member a:first-child {margin-left:0;}
+    header .boxT .member a::before {position:absolute; left:-25px; top:4px; display:block; width:1px; height:13px; content:""; background:#5c5c5c;}
+    header .boxT .member a:first-child::before {display:none;}
+    
+    header .boxT .navOpen {display:none;}
+    
+    header .boxB {position:relative; z-index:99; float:left; width:100%; height:110px; background:white;
+        -webkit-transition:height 0.3s ease;
+        -moz-transition:height 0.3s ease;
+        -o-transition:height 0.3s ease;
+        transition:height 0.3s ease;
+        border-bottom: 1px solid #DDDDDD;
+    }
+    /*body.fixOn header .boxB {position:fixed; height:60px; border-bottom:1px solid #dde0eb;}*/
+    body.fixOn header {position:fixed; height:60px; border-bottom:1px solid #dde0eb; z-index:99;}
+    body.fixOn header .boxB {height:60px; z-index:99;}
+    header .boxB > div {position:relative; width:1474px; height:100%; margin:0 auto;}
+    
+    header .boxB h1 {position:absolute; left:0; top:30px;
+        -webkit-transition:top 0.3s ease;
+        -moz-transition:top 0.3s ease;
+        -o-transition:top 0.3s ease;
+        transition:top 0.3s ease;
+    }
+    body.fixOn header .boxB h1 {top:15px;}
+    body.fixOn header .boxB h1 img {width:60px;}
+    
+    header .boxB .navClose, header .boxB .member {display:none;}
+    
+    header .boxB .gnv {float:left; height:100%; margin-left:210px;}
+    header .boxB .gnv > li {position:relative; float:left; height:100%;padding:0 20px 0 0;}
+    header .boxB .gnv > li > a {position:relative; z-index:999; display:block; height:100%; padding:40px 37px 0; box-sizing:border-box;
+        font-size:16px; font-weight:bold;
+        -webkit-transition:padding-top 0.3s ease;
+        -moz-transition:padding-top 0.3s ease;
+        -o-transition:padding-top 0.3s ease;
+        transition:padding-top 0.3s ease;
+    }
+    body.fixOn header .boxB .gnv > li > a {padding:15px 42px 0;}
+    header .boxB .gnv > li:hover > a {color:#279b33;}
+    header .boxB .gnv ul {position:absolute; left:0; top:-300px; display:block !important; width:100%; height:210px; padding:20px 0 0 42px; box-sizing:border-box;
+        -webkit-transition:top 0.3s ease;
+        -moz-transition:top 0.3s ease;
+        -o-transition:top 0.3s ease;
+        transition:top 0.3s ease;
+    }
+    body.navOn header .boxB .gnv ul {top:110px;}
+    body.navOn.fixOn header .boxB .gnv ul {top:60px;}
+    header .boxB .gnv ul li {margin-top:10px; margin-left:-10px;}
+    header .boxB .gnv ul li:first-child {margin-top:0;}
+    header .boxB .gnv ul a {font-size:16px; color:black;}
+    
+    header .boxB .gnv ul[data-gnv-list="1"] li:nth-child(5) > a {
+        font-size:15px;
+    }
+    header .boxB .btn_login {
+        float:right;
+        padding:46px 10px 0 0;
+    }
+    header .boxB .gnv_tomo {float:right; height:100%;}
+    header .boxB .gnv_tomo > li {position:relative; float:left; height:100%;}
+    header .boxB .gnv_tomo > li > a {position:relative; z-index:999; display:block; height:100%; padding:40px 42px 0; box-sizing:border-box; font-family:"notoMedium"; font-size:20px;
+        -webkit-transition:padding-top 0.3s ease;
+        -moz-transition:padding-top 0.3s ease;
+        -o-transition:padding-top 0.3s ease;
+        transition:padding-top 0.3s ease;
+    }
+    body.fixOn header .boxB .gnv_tomo > li > a {padding:15px 42px 0;}
+    header .boxB .gnv_tomo > li:hover > a {color:#f8575f;}
+    header .boxB .gnv_tomo ul {position:absolute; left:0; top:-300px; display:block !important; width:100%; height:210px; padding:20px 0 0 42px; box-sizing:border-box;
+        -webkit-transition:top 0.3s ease;
+        -moz-transition:top 0.3s ease;
+        -o-transition:top 0.3s ease;
+        transition:top 0.3s ease;
+    }
+    body.navOn header .boxB .gnv_tomo ul {top:110px;}
+    body.navOn.fixOn header .boxB .gnv_tomo ul {top:60px;}
+    header .boxB .gnv_tomo ul li {margin-top:10px;}
+    header .boxB .gnv_tomo ul li:first-child {margin-top:0;}
+    header .boxB .gnv_tomo ul a {font-size:16px; color:black;}
+    
+    body.navOn header::after {top:160px;}
+    body.navOn.fixOn header::after {top:110px;}
+    
+    header .boxB .quickMenu {position:fixed; right:0; top:50%; z-index:999; width:100px; height:600px; margin-top:-200px; font-family:"notoRegular"; background:white; border-radius:10px 0 0 10px;}
+    header .boxB .quickMenu a {position:relative; display:block; width:100%; height:25%; padding-top:80px; box-sizing:border-box; text-align:center;}
+    header .boxB .quickMenu a::after {position:absolute; left:50%; bottom:-1px; display:block; width:54px; height:0; margin-left:-27px; content:"";}
+    header .boxB .quickMenu a:nth-child(1) {height:25%; margin-bottom:10px; background:url("/common/img/iconRider.png") 50% 23px no-repeat #1b9747; border-bottom:1px dotted #cfcfcf; color:#ffffff; border-radius:10px 0 0 0;}
+    header .boxB .quickMenu a:nth-child(2) {background:url("/common/img/iconStudy.png") 50% 23px no-repeat; border-bottom:1px dotted #cfcfcf;}
+    header .boxB .quickMenu a:nth-child(3) {background:url("/common/img/iconVoucher.png") 50% 25px no-repeat; border-bottom:1px dotted #cfcfcf;}
+    header .boxB .quickMenu a:nth-child(4) {background:url("/common/img/iconBook.png") 50% 25px no-repeat;}
+    header .boxB .quickMenu a:nth-child(5) {background:url("/common/img/safety_helmet_icon.png") 50% 25px no-repeat;}
+    /*header .boxB .quickMenu a:nth-child(4)::after {display:none;}*/
+}
+
+/*@media screen and (max-width:415px) {*/
+/* iPhone 12 Pro Max 뷰포트 대응 yllee 210602 */
+@media screen and (max-width:428px) {
+    
+    header {float:left; width:100%;}
+    
+    header .boxT {position:fixed; z-index:9; float:left; width:100%; height:80px;}
+    header .boxT > div {position:relative; float:left; width:100%; height:100%; background:white; border-bottom:1px solid #f1f4f8;}
+    
+    header .boxT h1 {position:absolute; left:50%; top:10px; margin-left:-30px;}
+    header .boxT h1 img {width:80px; margin-top:10px;}
+    
+    header .boxT .select {position:absolute; left:0; top:0; width:80px; height:100%; text-align:center; background:url("/common/img/common/btnDown.png") 100% 50% / 10px no-repeat;}
+    header .boxT .link {position:absolute; left:5px; top:55px; display:none; background:white; border:1px solid #dadfe5;}
+    header .boxT .link a {display:block; width:78px; padding:8px 0; text-align:center;}
+    header .boxT .link a:first-child {border-bottom:1px solid #dadfe5;}
+    
+    header .boxT .link_tomo {position:absolute; left:5px; top:55px; display:none; background:white; border:1px solid #dadfe5;}
+    header .boxT .link_tomo a {display:block; width:78px; padding:8px 0; text-align:center;}
+    header .boxT .link_tomo a:first-child {border-bottom:1px solid #dadfe5;}
+    
+    header .boxT .member {display:none;}
+    
+    header .boxT .navOpen {position:absolute; right:0; top:0; width:80px; height:100%; background:url("/common/img/common/navOpen.png") 50% 50% / 50px no-repeat;}
+    
+    header .boxB {position:fixed; right:-320px; top:0; z-index:999; overflow-y:auto; width:320px; height:100%; padding:60px 0 0 30px; box-sizing:border-box; background:white;
+        -webkit-transition:right 0.3s ease;
+        -moz-transition:right 0.3s ease;
+        -o-transition:right 0.3s ease;
+        transition:right 0.3s ease;
+    }
+    body.navOn header .boxB {right:0;}
+    
+    header .boxB h1 {display:none;}
+    
+    header .boxB .navClose {position:absolute; left:15px; top:15px; width:25px; height:25px; background:url("/common/img/common/navClose.png") 0 0 / cover no-repeat;}
+    
+    header .boxB .member {float:left; width:100%; margin-bottom:30px;}
+    header .boxB .member div {margin-bottom:15px; padding-bottom:15px; border-bottom:1px solid #dde0eb;}
+    header .boxB .member div a {position:relative; margin-right:40px; font-size:16px;}
+    header .boxB .member div a:last-child {margin-right:0;}
+    header .boxB .member div a::after {position:absolute; right:-21px; top:1px; display:block; width:1px; height:14px; content:""; background:#dde0eb;}
+    header .boxB .member div a:last-child::after {display:none;}
+    header .boxB .member .text {margin-bottom:15px; letter-spacing:-1px;}
+    header .boxB .member .login {display:block; width:270px; height:45px; padding-top:8px; box-sizing:border-box; font-family:"notoMedium"; font-size:18px; text-align:center; color:#1e8e2a; border:1px solid #1e8e2a;}
+    header .boxB .member .info01 {margin-bottom:5px; font-size:16px;}
+    header .boxB .member .info01 em {font-family:"notoMedium"; font-size:22px;}
+    header .boxB .member .info02 {height:50px; padding:4px 0 0 45px; box-sizing:border-box; font-size:18px; color:#279b33; background:url("/common/img/common/icon_headphone.png") 0 0 / 30px no-repeat;}
+    header .boxB .member .info02 em {display:inline-block; height:30px; margin-left:8px; padding:0 15px; box-sizing:border-box; font-family:"notoMedium"; font-size:20px; line-height:26px; border:1px solid #279b33;
+        -webkit-border-radius:15px; /*Safari, Chrome*/
+        -moz-border-radius:15px; /*Firefox*/
+        border-radius:15px;
+    }
+    header .boxB .member .classroom {display:block; width:270px; height:45px; padding-top:8px; box-sizing:border-box; font-family:"notoMedium"; font-size:18px; text-align:center; color:white; background:#1e8e2a;}
+    
+    header .boxB .gnv {float:left; width:100%;}
+    header .boxB .gnv > li {margin-bottom:20px;}
+    /*header .boxB .gnv > li:nth-child(2) ul li:nth-child(2) {display: none;}*/
+    header .boxB .gnv > li:nth-child(4) {display:none;}
+    header .boxB .gnv > li > a {font-family:"notoMedium"; font-size:20px;}
+    header .boxB .gnv > li > a.on {color:#279b33;}
+    header .boxB .gnv ul {display:none; margin-top:10px; padding-top:5px; border-top:1px solid #dde0eb;}
+    header .boxB .gnv ul a {display:block; padding:5px 0;}
+    
+    header .boxB .gnv_tomo {float:left; width:100%;}
+    header .boxB .gnv_tomo > li {margin-bottom:20px;}
+    header .boxB .gnv_tomo > li > a {font-family:"notoMedium"; font-size:20px;}
+    header .boxB .gnv_tomo > li > a.on {color:#f8575f;}
+    header .boxB .gnv_tomo ul {display:none; margin-top:10px; padding-top:5px; border-top:1px solid #dde0eb;}
+    header .boxB .gnv_tomo ul a {display:block; padding:5px 0;}
+    
+    header .boxT a.login {
+        display:block;
+        width:80px;
+        height:40px;
+        margin-top:20px;
+        margin-left:5px;
+        padding-top:8px;
+        box-sizing:border-box;
+        font-family:"notoMedium", sans-serif;
+        font-size:15px;
+        text-align:center;
+        color:white;
+        border:1px solid #1e8e2a;
+        background-color:#0f741a;
+    }
+    
+    header .boxB .quickMenu {position:relative; left:-30px; float:left; width:calc(100% + 30px);}
+    header .boxB .quickMenu a {position:relative; float:left; display:block; width:33.33%; font-family:"notoRegular"; text-align:center;}
+    header .boxB .quickMenu a::after {position:absolute; right:0; top:50%; display:block; width:1px; height:30px; margin-top:-15px; content:""; background:#cfcfcf;}
+}
+
+/*--------------------------*/
+/* banner */
+/*--------------------------*/
+
+/*@media screen and (min-width:416px) {*/
+@media screen and (min-width:429px) {
+    
+    #cmm_banner {float:left; width:100%; border-top:5px solid #f1f4f8;}
+    #cmm_banner > div {width:1600px; margin:0 auto;}
+    #cmm_banner > div > div {position:relative; float:left; width:100%; height:100px; padding:20px 0 0; box-sizing:border-box;}
+    
+    #cmm_banner .box.opt {float:left; width:100%;text-align:center}
+    #cmm_banner .box.opt a {float:left; display:block; margin-right:60px;}
+    #cmm_banner .box.opt a:last-child {margin-right:0;}
+    #cmm_banner .box img {height:50px;}
+    
+    #cmm_banner .prev {position:absolute; left:0; top:50%; width:14px; height:27px; margin-top:-14px; background:url("/common/img/common/bannerPrev.png") no-repeat;}
+    #cmm_banner .next {position:absolute; right:0; top:50%; width:14px; height:27px; margin-top:-14px; background:url("/common/img/common/bannerNext.png") no-repeat;}
+    
+    #cmm_banner_footer {float:left; width:100%; border-top:5px solid #f1f4f8;}
+    #cmm_banner_footer > div {width:1200px; margin:0 auto;}
+    #cmm_banner_footer > div > div {position:relative; float:left; width:100%; height:100px;box-sizing:border-box;}
+    #cmm_banner_footer > div > div > a:first-child {margin-left:0;}
+    #cmm_banner_footer > div > div > a {margin-left:20px;}
+    #cmm_banner_footer > div > div > a > img {width:180px;}
+    
+}
+
+/*@media screen and (max-width:415px) {*/
+/* iPhone 12 Pro Max 뷰포트 대응 yllee 210602 */
+@media screen and (max-width:428px) {
+    
+    #cmm_banner {float:left; width:100%; border-top:5px solid #f1f4f8; display:none;}
+    #cmm_banner_footer {display:none;}
+    #cmm_banner > div {float:left; width:100%;}
+    #cmm_banner > div > div {position:relative; float:left; width:100%; height:60px; padding:15px 40px 0; box-sizing:border-box;}
+    
+    #cmm_banner .box.opt {float:left; width:100%; text-align:center;}
+    #cmm_banner .box.opt a {display:inline-block; margin:0 5px;}
+    #cmm_banner .box img {width:120px; height:30px;}
+    
+    #cmm_banner .prev {position:absolute; left:0; top:0; width:30px; height:100%; background:url("/common/img/common/bannerPrev.png") 50% 50% / 8px no-repeat;}
+    #cmm_banner .next {position:absolute; right:0; top:0; width:30px; height:100%; background:url("/common/img/common/bannerNext.png") 50% 50% / 8px no-repeat;}
+    
+    #cmm_banner_footer {float:left; width:100%; border-top:5px solid #f1f4f8;}
+    #cmm_banner_footer > div {width:1200px; margin:0 auto;}
+    #cmm_banner_footer > div > div {position:relative; float:left; width:100%; height:100px;box-sizing:border-box;}
+    #cmm_banner_footer > div > div > a:first-child {margin-left:0;}
+    #cmm_banner_footer > div > div > a {margin-left:20px;}
+    #cmm_banner_footer > div > div > a > img {width:180px;}
+}
+
+/*--------------------------*/
+/* footer */
+/*--------------------------*/
+
+/*@media screen and (min-width:416px) {*/
+@media screen and (min-width:429px) {
+    footer {float:left; width:100%; background:#333333;}
+    footer > div {width:1474px; margin:0 auto;}
+    footer > div > div {
+        position:relative; float:left;
+        padding:150px 0 50px 300px;
+    }
+    footer .logo {position:absolute; left:0; top:66px;}
+    footer .tel {
+        margin-top:46px;
+        font-weight:bold;
+        font-size:30px;
+        color:#ffffff;
+    }
+    footer .business_hours {
+        color:#848484;
+        letter-spacing:-0.45px;
+    }
+    footer .btn_faq {
+        float:left;
+        width:120px;
+        border:1px solid #FFFFFF;
+        border-radius:4px;
+        padding:8px 0 10px 0;
+        font-weight:bold;
+        color:#ffffff;
+        text-align:center;
+        margin:30px 10px 0 0;
+    }
+    footer .copyright {
+        height:120px;
+        padding-left:30px;
+        border-left:#848484 1px solid;
+    }
+    footer .link {float:left; width:80%; margin-bottom:30px;}
+    footer .link a {
+        float:left;
+        margin:5px;
+        color:white;
+        padding-right:10px;
+        border-right:#848484 1px solid;
+        font:normal normal medium Noto Sans CJK KR;
+        font-size:16px;
+    }
+    footer .link a:first-child {margin-left:0; color:#868686}
+    footer .link a:nth-child(2) {
+        color:#868686;
+    }
+    footer .link a:nth-child(3) {
+        color:#ffffff;
+    }
+    footer .link a:nth-child(4) {
+        color:#868686;
+        border-right:0;
+    }
+    footer address {float:left; width:820px; margin-bottom:25px; font-family:"notoDemiLight", sans-serif; line-height:24px; color:#868686;}
+    footer address span {position:relative; display:inline-block; margin-right:20px;}
+    footer address span::after {position:absolute; right:-16px; top:6px; display:block; width:1px; height:11px; content:""; background:#464646;}
+    footer address span:nth-child(3), footer address span:nth-child(7) {margin-right:0;}
+    footer address span:nth-child(3)::after, footer address span:nth-child(7)::after {display:none;}
+    footer p {float:left; width:100%; font-family:"notoDemiLight"; color:#868686;}
+    footer div.btn_footer {
+        position:absolute;
+        top:150px;
+        right:0; display:block; width:84px;
+    }
+}
+
+/*@media screen and (max-width:415px) {*/
+/* iPhone 12 Pro Max 뷰포트 대응 yllee 210602 */
+@media screen and (max-width:428px) {
+    
+    footer {float:left; width:100%; padding:35px 15px; box-sizing:border-box; text-align:center; background:#333333;}
+    footer > div {float:left; width:100%;}
+    footer > div > div {float:left; width:100%;}
+    
+    footer .logo {width:80px; margin-bottom:20px;}
+    
+    footer .link {margin-bottom:10px; text-align:left;}
+    footer .link a {display:inline-block; margin:0 5px 10px 0; font-family:"notoMedium"; font-size:13px; letter-spacing:-1px; color:white;}
+    
+    footer address {margin-bottom:18px; font-family:"notoDemiLight"; font-size:13px; text-align:left; color:#868686; display:none;}
+    footer address span:nth-child(1), footer address span:nth-child(4), footer address span:nth-child(7) {
+        position:relative; display:inline-block; margin-right:20px;
+    }
+    footer address span:nth-child(1)::after, footer address span:nth-child(4)::after, footer address span:nth-child(7)::after {
+        position:absolute; right:-12px; top:4px; display:block; width:1px; height:10px; content:""; background:#464646;
+    }
+    footer address span:nth-child(3), footer address span:nth-child(6), footer address span:nth-child(9) {display:block;}
+    
+    footer p {font-family:"notoDemiLight"; font-size:13px; text-align:left; color:#868686;}
+    
+}
+
+/*--------------------------*/
+/* sub */
+/*--------------------------*/
+
+/*@media screen and (min-width:416px) {*/
+@media screen and (min-width:429px) {
+    
+    #cmm_root {float:left; width:100%; height:58px; margin-bottom:45px; background:#1e8e2a; border-top:10px solid #f1f4f8;}
+    #cmm_root > div {width:1200px; height:100%; margin:0 auto;}
+    
+    #cmm_root .home {float:left; display:block; width:70px; height:100%; background:#0f741a url("/common/img/common/home.png") 50% 50% no-repeat; border-left:1px solid #4ba555; border-right:1px solid #4ba555;}
+    #cmm_root .box {position:relative; float:left; height:100%; border-right:1px solid #4ba555;}
+    #cmm_root .box button {position:relative; min-width:300px; height:100%; padding:0 80px 0 30px; font-size:18px; text-align:left; color:white;}
+    #cmm_root .box button::after {position:absolute; right:30px; top:50%; display:block; width:15px; height:8px; margin-top:-4px; content:""; background:url("/common/img/common/arrowRoot.png") no-repeat;}
+    #cmm_root .box div {position:absolute; left:0; top:58px; z-index:5; width:100%; box-sizing:border-box; border-left:1px solid #f1f4f8; border-right:1px solid #f1f4f8;}
+    #cmm_root .box div a {display:block; width:100%; padding:10px 20px; box-sizing:border-box; font-size:16px; background:white; border-bottom:1px solid #f1f4f8;}
+}
+
+/*@media screen and (max-width:415px) {*/
+/* iPhone 12 Pro Max 뷰포트 대응 yllee 210602 */
+@media screen and (max-width:428px) {
+    
+    #cmm_root {float:left; width:100%; margin-top:80px;}
+    #cmm_root > div {float:left;width:100%; }
+    
+    #cmm_root .home {display:none;}
+    #cmm_root .box {position:relative; float:left; width:50%; background:#1e8e2a;}
+    #cmm_root .box:last-child {box-sizing:border-box; border-left:1px solid #4ba555;}
+    #cmm_root .box button {position:relative; float:left; width:100%; height:45px; padding:0 30px 0 15px; text-align:left; color:white;}
+    #cmm_root .box button::after {position:absolute; right:10px; top:50%; display:block; width:12px; height:6px; margin-top:-3px; content:""; background:url("/common/img/common/arrowRoot.png") 0 0 / cover no-repeat;}
+    #cmm_root .box div {position:absolute; left:0; top:45px; z-index:9; width:100%; background:#8fc795;}
+    #cmm_root .box div a {display:block; width:100%; padding:10px 15px; box-sizing:border-box; color:white; border-top:1px solid #c6eaca;}
+    /*#cmm_root #ap_st_btn {display: none;}*/
+}
+
+/*@media screen and (min-width:416px) {*/
+@media screen and (min-width:429px) {
+    
+    #cmm_sub {width:1200px; margin:0 auto;}
+    #cmm_sub > div {float:left; width:100%; min-height:300px; margin-bottom:90px;}
+    #cmm_sub > div.mobile {display:none;}
+    
+    #cmm_sub h2 {width:100%; margin-bottom:20px; text-align:center;}
+    #cmm_sub h2 span {position:relative; font-family:"notoMedium"; font-size:34px;}
+    
+    #cmm_sub .cate_box {position:relative; float:left; width:146px; margin-left:2px }
+    #cmm_sub .cate_box button {position:relative; float:left; width:100%; height:50px; text-align:center; font-size:18px; border:1px solid #e5e5e5;}
+    #cmm_sub .cate_box button::after {position:absolute; right:10px; top:50%; display:block; width:12px; height:6px; margin-top:-3px; content:""; background:url("/common/img/common/arrowRoot.png") 0 0 / cover no-repeat;}
+    #cmm_sub .cate_box div {position:absolute; left:0; top:45px; z-index:9; width:100%; background-color:white; margin-top:5px}
+    #cmm_sub .cate_box div a {display:block; width:100%; padding:10px 15px; box-sizing:border-box; margin-left:0px;}
+    #cmm_sub .cate_box button.on {font-family:"notoMedium"; color:#1e8e2a; border:1px solid #1e8e2a;}
+}
+
+/*@media screen and (max-width:415px) {*/
+/* iPhone 12 Pro Max 뷰포트 대응 yllee 210602 */
+@media screen and (max-width:428px) {
+    
+    #cmm_sub {float:left; width:100%; margin:30px 0}
+    #cmm_sub > div {float:left; width:100%}
+    #cmm_sub > div > img {float:left; width:100%;}
+    #cmm_sub > div.pc {display:none;}
+    
+    #cmm_sub h2 {float:left; width:100%; margin:10px 0 20px; text-align:center;}
+    #cmm_sub h2 span {position:relative; font-family:"notoMedium"; font-size:24px;}
+    #cmm_sub h2 span::after {position:absolute; left:0; bottom:-5px; z-index:-9; display:block; width:100%; height:14px; content:""; background:#e1f6e3;}
+    #cmm_sub .cate_box button.on {font-family:"notoMedium"; color:#1e8e2a; border:1px solid #1e8e2a;}
+    #cmm_sub p.mobile img {width:100%}
+    #cmm_sub a.mobile img {width:100%}
+    #cmm_sub div.mobile img {width:100%}
+    
+    .category .cate_box {position:relative; float:left; width:120px; height:37px; margin:0 2px 2px 0;border:1px solid #e5e5e5;}
+    .category .cate_box:last-child {box-sizing:border-box; border-left:1px solid #4ba555;}
+    .category .cate_box button {position:relative; float:left; width:120px; height:37px; padding:0 30px 0 15px; text-align:left;}
+    .category .cate_box button::after {position:absolute; right:10px; top:50%; display:block; width:12px; height:6px; margin-top:-3px; content:""; background:url("/common/img/common/arrowRoot.png") 0 0 / cover no-repeat;}
+    .category .cate_box div {position:absolute; left:0; top:45px; z-index:9; width:100%;}
+    .category .cate_box div a {display:block; width:100%; box-sizing:border-box;margin:0; border-top:1px solid #c6eaca; background:white;}
+    .category .cate_box div a:first-child {margin-top:-8px}
+}
+
+
+
+
+
+
+
+
