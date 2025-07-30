@@ -1,0 +1,121 @@
+@charset "utf-8";
+
+/**
+* text state
+*/
+.primary { color:#e95a72!important; }
+.disabled { color:#d2d2d2!important; }
+.info { color:#538fd4!important; }
+.success { color:#7ab770!important; }
+.failed { color:#e95a72!important; }
+.txtsmall{line-height:1; font-size:12px;}
+
+strong {font-weight:bold;}
+strong.file_f{color:#333 !important;}
+strong.file_d{color:#ff0000 !important;}
+strong.file_c{color:#1b7606 !important;}
+strong.file_t{color:#0a36b3 !important;}
+strong.file_s{color:#f45a00 !important;}
+
+strong.icon1, strong.icon2, strong.icon3, strong.icon4{display:inline-block; width:20px; height:20px;}
+strong.icon1 img, strong.icon2 img, strong.icon3 img, strong.icon4 img{width:20px; height:20px;}
+
+/**
+* background-color
+*/
+.bg_primary {background:#3399ff; color:#fff;}
+.bg_secondary {background-color:#495266 !important; color:#fff;}
+.bg_third {background-color:#fb5e5e !important; color:#fff;}
+/* primary, secondary 외 간혹 포인트를 이용해야하는 경우 */
+.bg_basic {background-color:#dddddd !important;}
+/* gray 등 기본적으로 사용되는 연한 색상 */
+.bg_soft {background-color:#f5f5f5 !important;}
+/* bg_soft보다 연한 색상을 이용하는 경우 */
+.bg_softblue {background-color:#e9eef6 !important;}
+.bg_ending{background:#5c40c4; color:#fff;}
+
+/**
+*common
+*/
+.group:after{ display:block; clear:both; content:"";}
+.group > div.left{float:left;}
+.group > div.right{float:right;}
+ul.group > li{float:left;}
+.round{border-radius: 3px;}
+
+/**
+* main
+*/
+#intranet h4 {font-size:16px; height:40px !important;}
+#intranet .main_section {margin-bottom:30px;}
+#intranet .box {border:1px solid #ddd; padding:15px;}
+#intranet .box.no_padding {padding:0;}
+#intranet .tit_box {position:relative;}
+#intranet .btn_more {position:absolute; top:0; right:0; }
+
+#intranet #m_sec1 {height:300px;}
+#intranet .calendar_box {width:925px; margin-right:25px; box-sizing:border-box;}
+#intranet .calendar_box .calendar {width:440px; height:280px; padding:20px; background-color:#fff; box-sizing: border-box;}
+#intranet .calendar_box .calendar .year {position:relative; width:120px; padding-right:20px; text-align: center; box-sizing: border-box;}
+#intranet .calendar_box .calendar .year .arrow {position:absolute;bottom:30px;font-size:18px;}
+#intranet .calendar_box .calendar .year .arrow.afmonth {right:20px;}
+#intranet .calendar_box .calendar .year .yearmonth {font-weight: bold; }
+#intranet .calendar_box .calendar .year .yearmonth strong {display:block; font-size:36px; line-height:42px;}
+#intranet .calendar_box .calendar .day_box { width:280px;}
+#intranet .calendar_box .calendar .day_box .calendar_table thead th,
+#intranet .calendar_box .calendar .day_box .calendar_table tbody td {height:38px; text-align: center;}
+#intranet .calendar_box .calendar .day_box .calendar_table tbody td {font-size:11px;}
+
+#intranet .ing_business {width:440px; height: 280px; padding:15px; background-color:#fff; box-sizing: border-box;}
+#intranet .ing_business ul {border-top:2px solid #646464;}
+#intranet .ing_business ul li {padding:5px 0; height:30px; }
+#intranet .ing_business ul li em,
+#intranet .ing_business ul li span,
+#intranet .ing_business ul li strong {display:inline-block; }
+#intranet .ing_business ul li em {overflow: hidden; max-width:200px; white-space: nowrap; text-overflow: ellipsis; word-break: keep-all; }
+#intranet .ing_business ul li span {padding:5px 10px; color:#fff;}
+#intranet .ing_business ul li.business_B span {background-color:#538fd4}
+#intranet .ing_business ul li.business_F span {background-color:#e95a72}
+#intranet .ing_business ul li .ending {padding:3px 5px; margin:0 8px; box-sizing:border-box;}
+
+#intranet .info_box {width:450px;  box-sizing:border-box;}
+#intranet .info_box .customer_box .box {}
+#intranet .info_box .customer_box .box ul li {border-left:1px solid #ddd; height:100px; padding:20px; box-sizing: border-box; width:33.3%;}
+#intranet .info_box .customer_box .box ul li:first-child {border-left:0;width:33.4%;}
+#intranet .info_box .customer_box .box ul li dt,
+#intranet .info_box .customer_box .box ul li dd {display:block;}
+#intranet .info_box .customer_box .box ul li dt {color:#ddd;}
+#intranet .info_box .customer_box .box ul li dd {margin-top:25px;text-align:right; font-size:16px;}
+#intranet .info_box .customer_box .box ul li a {color:#fff !important;}
+
+.box_survey {margin-top:30px; height:130px; padding:20px; border:1px solid #fb5e5e; box-sizing: border-box;}
+.box_survey strong { display:block; font-size:14px; margin-bottom:10px;}
+
+#intranet .board_box .box {}
+#intranet .board_box .board_list {width:450px;margin-top:20px; margin-right:25px; box-sizing: border-box;}
+#intranet .board_box .board_list:nth-child(3n) {margin-right:0;}
+#intranet .board_box .board_list:nth-of-type(3n) {margin-right:0;}
+#intranet .board_box .board_list:nth-child(1),
+#intranet .board_box .board_list:nth-child(2),
+#intranet .board_box .board_list:nth-child(3) {margin-top:0;}
+#intranet .board_box .board_list .list { height:250px; }
+
+span.comment.able, #intranet span.comment.disable{display:none;}
+span.comment.able.on, #intranet span.comment.disable.on{display:block;}
+
+table.list_table tr th.tleft, table.list_table tr td.tleft{padding:10px; text-align:left; box-sizing:border-box; font-weight: 400;}
+
+#intranet ul.material_tab{display:table; padding-bottom:30px; width:100%; height:40px;}
+#intranet ul.material_tab li{width:50%; display: table-cell; background:#f5f5f5; border-bottom:2px solid #538fd4;}
+#intranet ul.material_tab li a{display:block; height:45px; line-height:45px; font-weight: 600; vertical-align:middle; text-align: center;}
+#intranet ul.material_tab li.on{background:#538fd4;}
+#intranet ul.material_tab li.on a{color:#fff;}
+
+div.info tr td div.changeinfo div.content {max-height: 150px; overflow-y: scroll; padding: 10px; background: #f5f5f5; font-size: 15px; box-sizing: border-box;}
+div.info tr td div.changeinfo div.content textarea{width:100%; resize: none;}
+div.material_write div.view_footer{margin:0; border-top:none;}
+
+div.whoread{}
+div.whoread > div{width:50%;}
+div.whoread > div ul li.tit{padding:10px 0; background:#f5f5f5; border-top:2px solid #333; border-bottom:1px solid #333; border-left:none; border-right:none; text-align: center;}
+div.whoread > div ul li{text-align:center; padding:5px 0; border:1px solid #ddd; border-top:none; }
