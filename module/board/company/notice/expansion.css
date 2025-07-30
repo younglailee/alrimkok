@@ -1,0 +1,24 @@
+@charset "utf-8";
+
+/* state */
+.bd_state_W { color:#1cb841 !important; }
+.bd_state_P { color:#0078e7 !important; }
+.bd_state_E { color:#6e6e6e !important; }
+
+/* notice */
+table.list_table tr.notice td { }
+table.list_table tr.notice td.no { padding:0; }
+table.list_table tr.notice td.no > span.notice { display:inline-block; padding:.25em 5px; background:#ec971f; font-weight:bold; color:#fff; }
+table.list_table tr.notice td.subject > a { color:#111 !important; }
+table.list_table tr td.overflow { display:block; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; max-width:300px; }
+
+/* subject */
+table.list_table tr td.subject { padding:0 10px; line-height:100%; }
+table.list_table tr td.subject > a { display:inline-block; overflow:hidden; max-width:90%; line-height:1.5em; vertical-align:middle; white-space:nowrap; text-overflow:ellipsis; }
+table.list_table tr td.subject > i { font-size:1.25em; vertical-align:middle; }
+table.list_table tr td.subject > i.file { color:#0078e7; }
+table.list_table tr td.subject > i.new { color:#1cb841; }
+
+/* view */
+div.board_view > dl > dd.cont img { max-width:100% !important; }
+div.content strong { font-weight:bold; }
