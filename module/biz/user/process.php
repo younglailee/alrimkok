@@ -4,8 +4,8 @@
  * @author  Alpha-Edu
  */
 
-use sFramework\Html;
 use sFramework\BizUser;
+use sFramework\Html;
 
 if (!defined('_ALPHA_')) {
     exit;
@@ -27,6 +27,8 @@ if ($mode == 'biz_like') {
     $bz_id = $_GET['bz_id'];
     $memoText = $_GET['memoText'];
     $result = $oBiz->saveMemo($bz_id, $memoText);
+} elseif ($mode == 'update_plan'){
+    $result = $oBiz->updateDataPlan();
 }
 // 결과 처리
 Html::postprocessFromResult($result, $flag_json);

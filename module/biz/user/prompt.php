@@ -23,6 +23,10 @@ $pk = $oBiz->get('pk');
 $is_root = true;
 
 $bz_id = $_GET['bz_id'];
+$bp_data = $oBiz->getDataProposal($bz_id);
+if($bp_data['bp_id']){
+    Html::alert('이미 제안서 작성을 진행 중입니다.','./plan.html?bz_id='.$bz_id);
+}
 $fi_data = $oBiz->getCompanyIntroduction();
 ?>
 <script>
@@ -63,6 +67,7 @@ $fi_data = $oBiz->getCompanyIntroduction();
     <div class="container">
         <h2 class="sec-title">AI 제안서 받아보기</h2>
         <form action="./plan.html" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="bz_id" value="<?=$_GET['bz_id']?>"/>
             <div class="proposalForm">
                 <fieldset>
                     <legend>AI 제안서 받아보기</legend>
