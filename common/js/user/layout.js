@@ -311,18 +311,20 @@ $(function () {
     // 팝업 열기
     $('.memo-btn').on('click', function () {
         const mb_id = $('input[name="mb_id"]').val();
+        const bz_id = $(this).data('bz');
 
         if (!mb_id) {
             alert('로그인이 필요합니다.');
         } else {
             $currentMemoBtn = $(this);
             const $li = $currentMemoBtn.closest('.memo');
-
             if ($li.hasClass('memo-on')) {
                 $('#memo_txt').val($currentMemoBtn.text().trim());
             } else {
                 $('#memo_txt').val('');
             }
+
+            $('.btn-save').attr('data-bz', bz_id);
 
             $('.pop-up').show();
         }
@@ -334,7 +336,7 @@ $(function () {
 
         const memoText = $('#memo_txt').val().trim();
         const $li = $currentMemoBtn.closest('.memo');
-        const bz_id = $('input[name="bz_id"]').val();
+        const bz_id = $(this).data('bz');
 
         $.ajax({
             url: "process.html",
@@ -347,7 +349,6 @@ $(function () {
                 memoText: memoText
             },
             success: function(result) {
-                console.log(result);
                 if (memoText !== '') {
                     $li.addClass('memo-on');
                     $currentMemoBtn.text(memoText);
@@ -356,10 +357,10 @@ $(function () {
                     $currentMemoBtn.html(DEFAULT_MEMO_TEXT);
                     $('#memo_txt').val('');
                 }
+                location.reload();
             }
         });
-
-        closeMemoPopup();
+        //closeMemoPopup();
     });
 
     // 닫기 함수
@@ -386,13 +387,9 @@ $(function () {
 
     //=============================================== apply-tab nt-end
     $('#mp .apply-tab > li').click(function () {
-        const index = $(this).index();
+        const target = $(this).data('target');
 
-        if (index === 2) {
-            $('#mp .applyForm select').hide();
-        } else {
-            $('#mp .applyForm select').show();
-        }
+        location.href = "./" + target + "_list.html";
     });
 
     $(document).ready(function () {
@@ -427,8 +424,49 @@ $(function () {
 
     //=============================================== 찜한공고 wish 해제 시 공고 삭제
     $('#mp.wish-noti .nt-list > li').each(function () {
-        $(this).find('.wish.on').click(function () {
-            $(this).closest('li').remove();
+        $(this).find('.wish.on').click(function (e) {
+            //$(this).closest('li').remove();
+            e.preventDefault();
+            e.stopPropagation();
+            const mb_id = $('input[name="mb_id"]').val();
+            const bz_id = $(this).data('bz');
+            const wish = $(this);
+            let state = 'unlike';
+            if ($(this).hasClass('on')) {
+                state = 'like';
+            }
+
+            if (!mb_id) {
+                alert('로그인이 필요합니다.');
+            } else {
+                $.ajax({
+                    url: "process.html",
+                    type: "GET",
+                    dataType: "json",
+                    data: {
+                        flag_json: '1',
+                        mode: 'biz_like',
+                        bz_id: bz_id,
+                        state: state
+                    },
+                    success: function (rs) {
+                        if(state === 'like'){
+                            wish.removeClass('on');
+                        } else if (state === 'unlike'){
+                            wish.addClass('on');
+                        }
+                        // wish02인 경우에만 이미지 src 변경
+                        if (wish.hasClass('wish02')) {
+                            const img = wish.find('img').eq(1);
+                            if (wish.hasClass('on')) {
+                                img.attr('src', '/common/img/user/icon/wish-on.svg');
+                            } else {
+                                img.attr('src', '/common/img/user/icon/wish-line.svg');
+                            }
+                        }
+                    }
+                });
+            }
         });
     });
 
