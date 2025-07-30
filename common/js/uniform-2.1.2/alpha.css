@@ -1,0 +1,281 @@
+/*
+Uniform Theme:Onboard
+Version:1.0
+By:Milgam12
+License:MIT License
+---
+For use with the Uniform plugin:
+http://uniformjs.com/
+*/
+
+/**
+* Common
+*/
+
+/* selector > div */
+div.selector {
+	display:-moz-inline-box;
+	display:inline-block;
+	*display:inline;
+	overflow:hidden; 
+	position:relative;
+	margin:0;
+	padding:0; 	
+	background-repeat:no-repeat;
+	background-position:0 -500px;
+	vertical-align:middle;
+	cursor:pointer; 
+	-webkit-font-smoothing:antialiased; 
+	*zoom:1;
+}
+div.selector.hover { background-position:0 -600px; }
+div.selector.focus { background-position:0 -700px; }
+div.selector.active { background-position:0 -800px; }
+div.selector.disabled {	background-position:0 -900px; }
+div.selector:focus { outline:0;  }
+
+/* selector > span */
+div.selector span {
+	display:block;
+	overflow:hidden;
+	width:100%;
+	margin:0;
+	padding:0; 
+	text-align:left;
+	text-overflow:ellipsis;	
+	white-space:nowrap;	
+	cursor:pointer; 
+	background-repeat:no-repeat;	
+	background-position:right 0; 
+	cursor:pointer; 
+	-webkit-font-smoothing:antialiased; 
+}
+div.selector.hover span { background-position:right -100px; }
+div.selector.focus span { background-position:right -200px; }
+div.selector.active span { background-position:right -300px; }
+div.selector.disabled span { background-position:right -400px; }
+
+/* selector > select */
+div.selector select {
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;	
+	margin:0;
+	padding:0; 
+	border:none;
+	background:none; 
+	cursor:pointer; 
+	opacity:0;
+	filter:alpha(opacity=0);
+	-moz-opacity:0;	
+}
+
+/* uploader > div */
+div.uploader {
+	display:-moz-inline-box;
+	display:inline-block;
+	*display:inline;
+	overflow:hidden; 	
+	margin:0;
+	padding:0;
+	position:relative;	
+	background-repeat:no-repeat;
+	background-position:0 -500px;
+	vertical-align:middle;
+	cursor:pointer; 
+	-webkit-font-smoothing:antialiased; 
+	*zoom:1;	
+}
+div.uploader.hover { background-position:0 -600px; }
+div.uploader.focus { background-position:0 -700px; }
+div.uploader.active { background-position:0 -800px; }
+div.uploader.disabled { background-position:0 -900px; }
+div.uploader:focus { outline:0; }
+
+/* upload > action */
+div.uploader span.action {	
+	display:inline;
+	float:left;
+	overflow:hidden;
+	margin:0;
+	padding:0;
+	background-repeat:no-repeat;
+	background-position:right 0;
+	text-align:center;	
+	cursor:pointer; 
+	-webkit-font-smoothing:antialiased;
+}
+div.uploader.hover span.action { background-position:right -100px; }
+div.uploader.focus span.action { background-position:right -200px; }
+div.uploader.active span.action { background-position:right -300px; }
+div.uploader.disabled span.action { background-position:right -400px; }
+
+div.uploader span.filename {
+	display:block;
+	float:left;
+	overflow:hidden;
+	margin:0;
+	padding:0;
+	border-right-style:solid;	
+	text-overflow:ellipsis;
+	white-space:nowrap;
+	cursor:default; 
+}
+
+div.uploader input {
+	float:right;
+	position:absolute;
+	top:0;
+	right:0;	
+	width:100%;
+	height:100%;	
+	margin:0;
+	padding:0;
+	border:none;
+	background:none;
+	cursor:default; 
+	opacity:0;
+	filter:alpha(opacity=0);
+	-moz-opacity:0;
+}
+
+/**
+* Selector
+*/
+
+/* selector > normal */
+div.selector, div.selector span, div.selector select { 
+	height:30px;
+	font-size:12px;
+	font-family:"돋움",dotum,Helvetica,sans-serif;	
+}
+
+div.selector, div.selector span {
+	background-image:url("/common/js/uniform-2.1.2/sprite-selector.png");
+}
+
+div.selector {
+	padding:0 0 0 10px;		
+	line-height:28px; 
+}
+
+div.selector.fixedWidth {
+	width:190px; 
+}
+
+div.selector.fixedWidth span {
+	width:155px; 
+}
+
+div.selector span {	
+	padding-right:25px;		
+	line-height:32px;
+	color:#666; 
+}
+
+div.selector.disabled span {
+	color:#999; 
+}
+
+div.selector select {
+	height:30px;
+	color:#333;
+}
+
+/* selector > stacore */
+div.selector.stacore, div.selector.stacore span, div.selector.stacore select { 
+	height:30px;
+	font-size:12px;
+	font-family:"돋움",dotum,Helvetica,sans-serif;	
+}
+
+div.selector.stacore, div.selector.stacore span {
+	background-image:url("./sprite-stacore.png")
+}
+
+div.selector.stacore {
+	padding:0 0 0 10px;		
+	line-height:28px; 
+}
+
+div.selector.stacore.fixedWidth {
+	width:190px; 
+}
+
+div.selector.stacore.fixedWidth span {
+	width:155px; 
+}
+
+div.selector.stacore span {	
+	padding-right:25px;		
+	line-height:32px;
+	color:#666; 
+}
+
+div.selector.stacore.disabled span {
+	color:#999; 
+}
+
+div.selector.stacore select {
+	height:30px;
+	color:#333;
+}
+
+
+
+/**
+* Uploader
+*/
+
+/* uploader > normal */
+div.uploader, span.action, span.filename { 
+	height:30px; 	
+	font-size:12px;
+	font-family:"돋움",dotum,Helvetica,sans-serif; 
+}
+
+div.uploader, div.uploader span.action {
+	background-image:url("./sprite-uploader.png");
+}
+
+div.uploader {
+	width:450px;		
+	background-color:#fff;
+	line-height:30px;
+}
+
+div.uploader span.action {	
+	width:99px;	
+	line-height:34px; 
+	color:#333; 
+}
+
+div.uploader.disabled span.action {
+	color:#999; 
+}
+
+div.uploader span.filename {
+	width:330px;
+	padding:0 10px; 
+	border-right-width:1px;
+	border-color:#d2d2d2;
+	line-height:34px; 
+	color:#666;
+}
+
+div.uploader.hover span.filename {
+	border-color:#26a0da; 
+}
+
+div.uploader.focus span.filename {
+	border-color:#000; 
+}
+
+div.uploader.active span.filename {
+	border-color:#000; 
+}
+
+div.uploader.disabled span.filename {
+	border-color:#bcbcbc; 
+}
