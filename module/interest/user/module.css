@@ -1,0 +1,26 @@
+/* container */
+#container {position:relative;width:100%;}
+body.main #container div.containerWrap {position:relative;left:0; width:100%; min-height:650px;margin-left:0;}
+
+/* sec_wrap */
+div.sec_wrap {position:relative; left:50%; padding:50px 0; width:1200px; margin-left:-600px;}
+div.sec_wrap > div.title_area > h3 {font-weight:600;font-size:40px;line-height:40px;color:#d91b5c;}
+div.sec_wrap > div.title_area > p {display:block;margin-top:20px;font-size:13px;line-height:18px;color:#666;}
+div.sec_wrap > div.title_area > .color {color:#fff;}
+
+/* main */
+
+.hidden {
+    display:inline !important;
+    visibility:hidden !important;
+    position:absolute !important;
+    width:0 !important;
+    height:0 !important;
+    margin:0 !important;
+    padding:0 !important;
+    background:none !important;
+    font-size:0 !important;
+    line-height:0 !important;
+    border:0 !important;
+    overflow:hidden !important;
+}
