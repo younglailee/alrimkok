@@ -163,6 +163,12 @@ class BizUser extends Biz
         $sch_bz_institution = $_GET['sch_bz_institution'] ?? '';
         $sch_s_date = $_GET['sch_s_date'] ?? '';
         $sch_e_date = $_GET['sch_e_date'] ?? '';
+
+        $s_date = $_GET['s_date'] ?? $_GET['m_s_date'] ?? '';
+        $e_date = $_GET['e_date'] ?? $_GET['m_e_date'] ?? '';
+        $bz_title = $_GET['bz_title'] ?? $_GET['m_bz_title'] ?? '';
+        $deadline = $_GET['deadline02'] ?? $_GET['deadline'] ?? '';
+
         global $member;
         $mb_id = $member['mb_id'];
 
@@ -199,6 +205,27 @@ class BizUser extends Biz
             if ($sch_e_date) {
                 $db_where .= " AND b.bz_apply_e_datetime <= '$sch_e_date 23:59:59'";
             }
+
+        }elseif($target == 'apply'){
+            $db_where .= " AND b.bz_title IS NOT NULL AND b.bz_title != '' AND a.mb_id = '$mb_id'";
+            if($deadline == 'ing') {
+                $db_where .= " AND DATE(b.bz_apply_e_datetime) >= CURDATE()";
+            } elseif($deadline == 'end') {
+                $db_where .= " AND DATE(b.bz_apply_e_datetime) < CURDATE()";
+            } else {
+                if($s_date) {
+                    $db_where .= " AND DATE(b.bz_apply_e_datetime) >= '$s_date 00:00:00'";
+                }
+
+                if($e_date) {
+                    $db_where .= " AND DATE(b.bz_apply_e_datetime) <= '$e_date 23:59:59'";
+                }
+            }
+
+            if($bz_title) {
+                $db_where .= " AND b.bz_title LIKE '%$bz_title%'";
+            }
+
         } else {
             $db_where .= " AND DATE(bz_apply_e_datetime) >= CURDATE() AND bz_title IS NOT NULL AND bz_title != ''";
 
@@ -247,6 +274,8 @@ class BizUser extends Biz
             $this->set('select_table', 'tbl_biz_like a JOIN tbl_biz_notice b ON a.bz_id = b.bz_id');
         } elseif ($target == 'recommend') {
             $this->set('select_table', 'tbl_biz_recommend a JOIN tbl_biz_notice b ON a.bz_id = b.bz_id');
+        } elseif ($target == 'apply') {
+            $this->set('select_table', 'tbl_biz_apply a JOIN tbl_biz_notice b ON a.bz_id = b.bz_id');
         }
     }
 
@@ -283,7 +312,7 @@ class BizUser extends Biz
         if ($list_mode == 'excel') {
             $db_limit = '';
         }
-        if ($target == 'recommend' || $target == 'like' || $target == 'recent') {
+        if ($target == 'recommend' || $target == 'like' || $target == 'recent' || $target == 'apply') {
             $db_order = " ORDER BY b.reg_time DESC";
         } else {
             $db_order = $this->makeDbOrder();
@@ -685,7 +714,6 @@ class BizUser extends Biz
         global $member;
         $mb_id = $member['mb_id'];
 
-        Log::debug($state);
         $result = array(
             'code' => 'failure',
             'msg' => "좋아요 실패"
@@ -744,8 +772,8 @@ class BizUser extends Biz
                 } else {
                     $bl_data = Db::selectOnce('tbl_biz_like', "bl_id", "WHERE mb_id='$mb_id' AND bz_id='$bz_id'", '');
                     $bl_id = $bl_data['bl_id'];
-                    if($bl_id){
-                        Db::delete('tbl_biz_like',"WHERE bl_id='$bl_id'");
+                    if ($bl_id) {
+                        Db::delete('tbl_biz_like', "WHERE bl_id='$bl_id'");
                     }
                 }
             }
@@ -794,5 +822,60 @@ class BizUser extends Biz
         $cp_id = $member['cp_id'];
 
         return Db::selectOnce('tbl_file', '*', "WHERE fi_uid='$cp_id' AND fi_module = 'company'", '');
+    }
+
+    public function updateDataPlan()
+    {
+        global $member;
+        $mb_id = $member['mb_id'];
+        $bz_id = $_POST['bz_id'];
+
+        $state = $_POST['apply'];
+
+        $arr = array(
+            'bp_purpose' => $_POST['proposal_purpose'],
+            'bp_scope' => $_POST['execution_scope'],
+            'bp_advantages' => $_POST['advantages'],
+            'bp_status' => $_POST['company_status'],
+            'bp_organization' => $_POST['organization_and_staff'],
+            'bp_summary' => $_POST['project_summary'],
+            'bp_strategy' => $_POST['strategy'],
+            'bp_content' => $_POST['main_content'],
+            'bp_plan' => $_POST['detailed_plan'],
+            'bp_schedule' => $_POST['schedule'],
+            'bp_reporting' => $_POST['reporting_plan'],
+            'bp_task' => $_POST['task_assignment'],
+            'bp_personnel' => $_POST['personnel_info'],
+            'bp_management' => $_POST['admin_management'],
+            'bp_output' => $_POST['output_management'],
+            'bp_budget' => $_POST['budget_plan'],
+            'upt_id' => $mb_id,
+            'upt_time' => _NOW_DATETIME_
+        );
+
+        if ($state == 'Y') {
+            $ba_data = Db::selectOnce('tbl_biz_apply', "ba_id, ba_state", "WHERE bz_id='$bz_id' AND mb_id='$mb_id'", '');
+
+            $ba_id = $ba_data['ba_id'];
+            $ba_state = $ba_data['ba_state'];
+
+            if ($ba_state == 'W') {
+                Db::update('tbl_biz_apply', "ba_state = 'P'", "WHERE ba_id = '$ba_id'");
+            }
+        }
+
+        $result = array(
+            'code' => 'success',
+            'msg' => "제안서를 저장하였습니다."
+        );
+
+        if (!Db::updateByArray('tbl_biz_proposal', $arr, "WHERE mb_id='$mb_id' AND bz_id='$bz_id'")) {
+            $result = array(
+                'code' => 'failure',
+                'msg' => "제안서 저장에 실패하였습니다."
+            );
+        }
+
+        return $result;
     }
 }

@@ -8,13 +8,6 @@
 
 namespace sFramework;
 
-use Exception;
-use sFramework\Api;
-use sFramework\Db;
-use sFramework\File;
-use sFramework\Format;
-use sFramework\Html;
-use sFramework\StandardModule;
 use function array_merge;
 use function count;
 use function implode;
@@ -1675,8 +1668,8 @@ class Biz extends StandardModule
         $biz_support_content = $biz_data['bz_support_content'];
 
         $gpt_prompt = <<<EOD
-공고문 정보와 사업 아이템 정보를 제공할 테니, 이를 바탕으로 아래 항목에 맞는 실제 사업계획서 내용을 작성해 주세요.  
-작성 내용은 실제 제안서처럼 현실적이고 설득력 있게 작성하며, 반드시 JSON 형식으로만 응답하세요.
+공고문 정보와 사업 아이템 설명을 제공할 테니, 이를 바탕으로 아래 항목별로 실제 제안서를 작성할 때 어떤 내용을 포함해야 하는지를 안내하는 작성 가이드를 JSON 형식으로 생성해 주세요.
+각 항목은 어떤 내용을 중심으로, 어떤 방식으로 작성해야 하는지를 현실적으로 안내해 주세요. 실제 제안서 내용은 작성하지 말고, 오직 작성 요령만 제공해 주세요.
 
 📂 공고문 정보:
 - 공고제목: $biz_name  
@@ -1686,7 +1679,7 @@ class Biz extends StandardModule
 📂 사업 아이템 설명:
 - $bz_prompt
 
-📌 작성 대상 항목 구조 안내 (참고용):
+📌 작성 대상 항목 구조 안내:
 
 제안개요  
  - 제안목적  
@@ -1716,11 +1709,11 @@ class Biz extends StandardModule
  - 예산계획  
 
 ⚠️ 아래 조건을 반드시 지켜주세요:
-- 실제 사업계획서처럼 자연스럽고 완전한 문장으로 작성하세요.
-- 전문가가 직접 작성한 것 같은 내용으로 작성하세요.
+- 각 항목은 문장 형식의 설명이어야 하며, 전문가가 실제 제안서를 작성할 때 참고할 수 있을 만큼 구체적이어야 합니다.
 - JSON 객체로만 응답하세요. 코드 블록(```)은 절대 사용하지 마세요.
 - key는 반드시 아래에 명시된 **영문 키**만 사용하고, 순서는 자유입니다.
 - value는 모두 **문장 형식의 텍스트**로 작성하세요. (리스트나 개조식 ❌)
+- 실제 사업계획서 본문 내용은 작성하지 마세요.
 
 📂 JSON 출력 키:
 
@@ -1822,12 +1815,25 @@ EOD;
             $arr['reg_time'] = _NOW_DATETIME_;
 
             Db::insertByArray('tbl_biz_proposal',$arr);
+
+            $arr2 = array(
+                'bz_id' => $bz_id,
+                'mb_id' => $mb_id,
+                'ba_state' => 'W',
+                'reg_id' => $mb_id,
+                'reg_time' => _NOW_DATETIME_
+            );
+
+            Db::insertByArray('tbl_biz_apply',$arr2);
         }
     }
 
     public function getDataProposal($bz_id){
         global $member;
         $mb_id = $member['mb_id'];
-        return Db::selectOnce('tbl_biz_proposal','*',"WHERE mb_id='$mb_id' AND bz_id='$bz_id'",'');
+        $data = Db::selectOnce('tbl_biz_proposal','*',"WHERE mb_id='$mb_id' AND bz_id='$bz_id'",'');
+        $ba_data = Db::selectOnce('tbl_biz_apply','ba_state',"WHERE mb_id='$mb_id' AND bz_id='$bz_id'",'');
+        $data['ba_state'] = $ba_data['ba_state'];
+        return $data;
     }
 }
