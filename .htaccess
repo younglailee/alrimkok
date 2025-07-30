@@ -1,0 +1,129 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+###
+# welcome
+##
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^web(admin|manager|user|mobile|tutor|company|partner|cyber|damc|grand|misian|kepid|samkwang|ssws)$ /index.php?la=$1 [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^web(admin|manager|user|mobile|tutor|company|partner|cyber|damc|grand|misian|kepid|samkwang|ssws)/$ /index.php?la=$1 [L]
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteRule ^content.php$ /index.php?la=user [L]
+###
+# css
+##
+# layout
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^web(admin|manager|user|mobile|tutor|company|partner|cyber|damc|grand|misian|kepid|samkwang|ssws)/layout.css$ /layout/$1/layout.css [L]
+# expansion > board
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^web(admin|manager|user|mobile|tutor|company|partner)/(notice|policy|announcement|schedule|calendar|free|reservation|gallery|video|consult|receipt|request|faq|qna|event|owner|safe|bookboard|snotice)/expansion.css$ /module/board/css.php?la=$1&md=board&ep=$2 [L]
+# occupancy
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^web(admin|manager|user|mobile|tutor|company|partner)/(venture_occupancy|hightech_occupancy)/module.css$ /module/occupancy/css.php?la=$1&md=occupancy [L]
+# carousel
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^web(admin|manager|user|mobile|tutor|company|partner)/(popupzone|banner|visual)/module.css$ /module/carousel/css.php?la=$1&md=carousel [L]
+# module
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^web(admin|manager|user|mobile|tutor|company|partner|cyber|damc|grand|misian|kepid|samkwang|ssws)/(.*)/module.css$ /module/$2/css.php?la=$1&md=$2 [L]
+###
+# js
+##
+# layout
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^web(admin|manager|user|mobile|tutor|company|partner|cyber|damc|grand|misian|kepid|samkwang|ssws)/layout.js$ /layout/$1/layout.js [L]
+# expansion > board
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^web(admin|manager|user|mobile|tutor|company|partner)/(notice|policy|announcement|schedule|calendar|free|reservation|gallery|video|consult|receipt|request|faq|qna|event|owner|safe|bookboard|snotice)/expansion.js$ /module/board/js.php?la=$1&md=board&ep=$2 [L]
+# occupancy
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^web(admin|manager|user|mobile|tutor|company|partner)/(venture_occupancy|hightech_occupancy)/module.js$ /module/occupancy/js.php?la=$1&md=occupancy [L]
+# carousel
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^web(admin|manager|user|mobile|tutor|company|partner)/(popupzone|banner|visual)/module.js$ /module/carousel/js.php?la=$1&md=carousel [L]
+# module
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^web(admin|manager|user|mobile|tutor|company|partner|cyber|damc|grand|misian|kepid|samkwang|ssws)/(.*)/module.js$ /module/$2/js.php?la=$1&md=$2 [L]
+###
+# img
+##
+# layout
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^web(admin|manager|user|mobile|tutor|company|partner|cyber|damc|grand|misian|kepid|samkwang|ssws)/img/(.*)$ /layout/$1/img/$2 [L]
+# expansion
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^web(admin|manager|user|mobile|tutor|company|partner)/(notice|policy|announcement|schedule|calendar|free|reservation|gallery|video|consult|receipt|request|training|bookboard)/img/(.*)$ /module/board/$1/$2/img/$3 [L]
+# occupancy
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^web(admin|manager|user|mobile|tutor|company|partner)/(venture_occupancy|hightech_occupancy)/img/(.*)$ /module/occupancy/$1/img/$3 [L]
+# carousel
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^web(admin|manager|user|mobile|tutor|company|partner)/(popupzone|banner|visual)/img/(.*)$ /module/carousel/$1/img/$3 [L]
+# module
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^web(admin|manager|user|mobile|tutor|company|partner|cyber|damc|grand|misian|kepid|samkwang|ssws)/(.*)/img/(.*)$ /module/$2/$1/img/$3 [L]
+###
+# dispatch
+##
+# board
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^web(admin|manager|user|mobile|tutor|company|partner)/(tutor_notic)/(.*).html$ /controller.php?la=$1&md=board&ep=tutornotic&bd_code=$2&sv=$3&%{QUERY_STRING} [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^web(admin|manager|user|mobile|tutor|company|partner)/(notice|news|reference|form|research|recruit|management|education|article|notepad|cloud|safe|snotice)/(.*).html$ /controller.php?la=$1&md=board&ep=notice&bd_code=$2&sv=$3&%{QUERY_STRING} [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^web(admin|manager|user|mobile|tutor|company|partner)/(faq)/(.*).html$ /controller.php?la=$1&md=board&ep=faq&bd_code=$2&sv=$3&%{QUERY_STRING} [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^web(admin|manager|user|mobile|tutor|company|partner)/(gallery)/(.*).html$ /controller.php?la=$1&md=board&ep=gallery&bd_code=$2&sv=$3&%{QUERY_STRING} [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^web(admin|manager|user|mobile|tutor|company|partner)/(policy)/(.*).html$ /controller.php?la=$1&md=board&ep=policy&bd_code=$2&sv=$3&%{QUERY_STRING} [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^web(admin|manager|user|mobile|tutor|company|partner)/(business)/(.*).html$ /controller.php?la=$1&md=board&ep=announcement&bd_code=$2&sv=$3&%{QUERY_STRING} [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^web(admin|manager|user|mobile|tutor|company|partner)/(event)/(.*).html$ /controller.php?la=$1&md=board&ep=event&bd_code=$2&sv=$3&%{QUERY_STRING} [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^web(admin|manager|user|mobile|tutor|company|partner)/(owner)/(.*).html$ /controller.php?la=$1&md=board&ep=owner&bd_code=$2&sv=$3&%{QUERY_STRING} [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^web(admin|manager|user|mobile|tutor|company|partner)/(photo)/(.*).html$ /controller.php?la=$1&md=board&ep=gallery&bd_code=$2&sv=$3&%{QUERY_STRING} [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^web(admin|manager|user|mobile|tutor|company|partner)/(video)/(.*).html$ /controller.php?la=$1&md=board&ep=video&bd_code=$2&sv=$3&%{QUERY_STRING} [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^web(admin|manager|user|mobile|tutor|company|partner)/(consult)/(.*).html$ /controller.php?la=$1&md=board&ep=consult&bd_code=$2&sv=$3&%{QUERY_STRING} [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^web(admin|manager|user|mobile|tutor|company|partner)/(receipt)/(.*).html$ /controller.php?la=$1&md=board&ep=receipt&bd_code=receipt&sv=$3&%{QUERY_STRING} [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^web(admin|manager|user|mobile|tutor|company|partner)/(enrollment)/(.*).html$ /controller.php?la=$1&md=board&ep=enrollment&bd_code=enrollment&sv=$3&%{QUERY_STRING} [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^web(admin|manager|user|mobile|tutor|company|partner)/(material)/(.*).html$ /controller.php?la=$1&md=board&ep=material&bd_code=material&sv=$3&%{QUERY_STRING} [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^web(admin|manager|user|mobile|tutor|company|partner)/(collusion)/(.*).html$ /controller.php?la=$1&md=board&ep=collusion&bd_code=collusion&sv=$3&%{QUERY_STRING} [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^web(admin|manager|user|mobile|tutor|company|partner|cyber)/(qna)/(.*).html$ /controller.php?la=$1&md=board&ep=qna&bd_code=qna&sv=$3&%{QUERY_STRING} [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^web(admin|manager|user|mobile|tutor|company|partner)/(remote)/(.*).html$ /controller.php?la=$1&md=board&ep=remote&bd_code=remote&sv=$3&%{QUERY_STRING} [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^web(admin|manager|user|mobile|tutor|company|partner)/(request)/(.*).html$ /controller.php?la=$1&md=board&ep=request&bd_code=$2&sv=$3&%{QUERY_STRING} [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^web(admin|manager|user|mobile|tutor|company|partner)/(training)/(.*).html$ /controller.php?la=$1&md=board&ep=training&bd_code=$2&sv=$3&%{QUERY_STRING} [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^web(admin|manager|user|mobile|tutor|company|partner)/(proposal|free|review)/(.*).html$ /controller.php?la=$1&md=board&ep=free&bd_code=$2&sv=$3&%{QUERY_STRING} [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^web(admin|manager|user|mobile|tutor|company|partner)/(schedule)/(.*).html$ /controller.php?la=$1&md=board&ep=schedule&bd_code=$2&sv=$3&%{QUERY_STRING} [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^web(admin|manager|user|mobile|tutor|company|partner)/(calendar)/(.*).html$ /controller.php?la=$1&md=board&ep=calendar&bd_code=$2&sv=$3&%{QUERY_STRING} [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^web(admin|manager|user|mobile|tutor|company|partner)/(bookboard)/(.*).html$ /controller.php?la=$1&md=board&ep=bookboard&bd_code=$2&sv=$3&%{QUERY_STRING} [L]
+# occupancy
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^web(admin|manager|user|mobile|tutor|company|partner)/(venture_occupancy|hightech_occupancy)/(.*).html$ /controller.php?la=$1&md=occupancy&oc_code=$2&sv=$3&%{QUERY_STRING} [L]
+# carousel
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^web(admin|manager|user|mobile|tutor|company|partner)/(popupzone|banner|visual)/(.*).html$ /controller.php?la=$1&md=carousel&cr_code=$2&sv=$3&%{QUERY_STRING} [L]
+# normal
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^web(admin|manager|user|mobile|tutor|company|partner|cyber|damc|grand|misian|kepid|samkwang|ssws)/(.*)/(.*).html$ /controller.php?la=$1&md=$2&sv=$3&%{QUERY_STRING} [L]
+##
+# log
+#
+RewriteRule ^log/(.*)$ [F,L]
