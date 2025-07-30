@@ -1,0 +1,4 @@
+www.youtube(?:-nocookie)?.com/
+serviceapi.rmcnmv.naver.com/
+videofarm.daum.net/
+player.vimeo.com/
