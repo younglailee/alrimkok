@@ -1,0 +1,42 @@
+@charset "utf-8";
+div.list_header { height:35px; }
+/*div.list_header > div.left { padding-left:0; }*/
+
+.success { color:#7ab770!important; }
+.failed { color:#e95a72!important; }
+.info { color:#538fd4!important; }
+.disabled { color:#d2d2d2!important; }
+.point { color:#e95a72!important; }
+.stand { color:#e95a72!important; }
+.wait { color:#6e6e6e!important; }
+
+div.statistics_area {position:relative;margin-bottom:40px;}
+
+table.list_table.statistics tr td {padding:3em 0;}
+table.list_table.statistics tr td.total {background:#e7faff;}
+table.list_table.statistics tr td.deviation {background:#ffffdc;}
+table.list_table.statistics tr td strong {font-weight:600;font-size:16px;}
+table.list_table.statistics tr td span {display:block;margin-top:5px;}
+
+/* stats */
+
+#container div.stats { margin-bottom:30px;}
+#container div.stats > h4 { padding:0 0 5px 20px; font-size:12px; font-weight:normal; background:url("/common/img/admin/ico_state_chart.gif") 0 9px no-repeat; }
+#container div.stats > h4 strong {font-weight:bold;}
+table.stats_table { width:100%; margin:0; border-collapse:collapse; table-layout:fixed;}
+table.stats_table thead {border:1px #666 solid; }
+table.stats_table tr th, table.stats_table tr td { padding:0.75em 10px; vertical-align:middle;}
+table.stats_table tr th { font-weight:bold; color:#fff; line-height:1em; text-align:center; background:url("/common/img/admin/bg_state_table_th.gif") 0 0 repeat-x #7f7f7f;}
+table.stats_table tr td {border:1px solid #d2d2d2;  font-size:11px; color:#6e6e6e; line-height:1.5em; text-align:center;}
+table.stats_table tr td:after { display:block; clear:both; content:""}
+table.stats_table tr td.sub_th { background:#f5f5f5; color:#3c3c3c; text-align:center;}
+table.stats_table tr th.subject, table.stats_table tr td.subject { padding-left:15px; text-align:left; }
+table.stats_table tr td.number { text-align:right; }
+table.stats_table tr td > div.visit_bar {position:relative; width:600px; padding-right:10px;}
+table.stats_table tr td > div.visit_bar > span {display:block; position:relative; float:left; height:15px; background:#e95a72; }
+table.stats_table tr td > div.visit_bar > span.percent {position:absolute; background:#fff; width: 40px;}
+table.stats_table tfoot tr.sum th, table.stats_table tfoot tr.sum td { border:1px solid #d2d2d2; background:#dbeef3; font-weight:bold; color:#505050; }
+
+/* stats > summary */
+table.stats_table.summary thead {border-color:#467fc1; }
+table.stats_table.summary tr th { background:url("/common/img/admin/bg_summary_table_th.gif") 0 0 repeat-x #538ed4; }
