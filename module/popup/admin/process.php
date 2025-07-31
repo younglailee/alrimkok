@@ -3,8 +3,9 @@
  * @file    process.php
  * @author  Alpha-Edu
  */
-use sFramework\PopupAdmin;
+
 use sFramework\Html;
+use sFramework\PopupAdmin;
 
 if (!defined('_ALPHA_')) {
     exit;
@@ -14,6 +15,9 @@ if (!defined('_ALPHA_')) {
 $oPopup = new PopupAdmin();
 $oPopup->init();
 $pk = $oPopup->get('pk');
+
+$mode = ($_POST['mode']) ?: $_GET['mode'];
+$flag_json = ($_POST['flag_json']) ?: $_GET['flag_json'];
 
 if ($mode == 'insert') {
     // 등록
@@ -25,6 +29,5 @@ if ($mode == 'insert') {
     // 삭제
     $result = $oPopup->deleteData();
 }
-
 // 결과 처리
 Html::postprocessFromResult($result, $flag_json);

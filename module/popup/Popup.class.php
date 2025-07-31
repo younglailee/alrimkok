@@ -5,7 +5,10 @@
  * @author  Alpha-Edu
  * @package admin
  */
+
 namespace sFramework;
+
+use function count;
 
 class Popup extends StandardModule
 {
@@ -28,13 +31,13 @@ class Popup extends StandardModule
         // 검색
         $this->set('search_columns', 'pu_is_display');
         $this->set('search_like_arr', array(
-            'writer_name'     => '작성자',
-            'pu_subject'  => '제목'
+            'writer_name' => '작성자',
+            'pu_subject' => '제목'
         ));
 
         $this->set('search_date_arr', array(
-            'pu_bgn_date'      => '시작일',
-            'pu_end_date'    => '종료일'
+            'pu_bgn_date' => '시작일',
+            'pu_end_date' => '종료일'
         ));
 
         // 정렬
@@ -55,6 +58,7 @@ class Popup extends StandardModule
             'Y' => '출력',
             'N' => '숨김'
         ));
+        $this->set('img_size', '400 * 480');
     }
 
     protected function initInsert()
@@ -119,8 +123,11 @@ class Popup extends StandardModule
             $uid = $data[$pk];
 
             $data['file_list'] = $this->getFileList($uid);
-            $data['cnt_file'] = count($data['file_list']);
-
+            if ($data['file_list']) {
+                $data['cnt_file'] = count($data['file_list']);
+            } else {
+                $data['cnt_file'] = 0;
+            }
             if ($this->get('flag_use_thumb')) {
                 if ($data['file_list'][0]['thumb_uri']) {
                     $data['thumb_uri'] = $data['file_list'][0]['thumb_uri'];
@@ -131,10 +138,11 @@ class Popup extends StandardModule
         }
 
         // 에디터 썸네일
-        if ($this->get('editor_columns') && count($data['file_list']) < 1) {
-            $data['thumb_uri'] = $this->getThumbnailFromEditor($data);
+        if ($data['file_list']) {
+            if ($this->get('editor_columns') && count($data['file_list']) < 1) {
+                $data['thumb_uri'] = $this->getThumbnailFromEditor($data);
+            }
         }
-
         return $data;
     }
 
@@ -145,6 +153,7 @@ class Popup extends StandardModule
         $db_where = "WHERE pu_is_display = 'Y' ";
         $db_where .= "AND ('" . _NOW_DATETIME_ . "' BETWEEN CONCAT(pu_bgn_date, ' ', pu_bgn_time) ";
         $db_where .= "AND CONCAT(pu_end_date, ' ', pu_end_time)) ";
+        //echo $db_where;
         $list = Db::select($data_table, "*", $db_where, "", "");
 
         return $this->convertList($list);
@@ -157,7 +166,7 @@ class Popup extends StandardModule
 
         global $member;
 
-        $arr['writer_name'] =$member['mb_name'];
+        $arr['writer_name'] = $member['mb_name'];
 
         return $arr;
     }
