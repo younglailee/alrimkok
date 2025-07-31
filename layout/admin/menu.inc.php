@@ -43,9 +43,7 @@ $menu[] = array(
     'sub' => array(
         array('title' => '기본정보설정', 'uri' => '/webadmin/setting/base_info.html', 'auth_code' => 'setting'),
         array('title' => '약관정보설정', 'uri' => '/webadmin/setting/terms_info.html', 'auth_code' => 'setting'),
-        array('title' => '결제정보', 'uri' => '/webadmin/setting/payment.html', 'auth_code' => 'setting'),
         array('title' => '팝업관리', 'uri' => '/webadmin/popup/list.html', 'auth_code' => 'setting'),
-        array('title' => '메인배너관리', 'uri' => '/webadmin/carousel/list.html', 'auth_code' => 'setting'),
         array('title' => '하단배너관리', 'uri' => '/webadmin/footer/list.html', 'auth_code' => 'setting'),
         array('title' => '공고사이트', 'uri' => '/webadmin/crawl/list.html', 'auth_code' => 'crawl'),
         array('title' => '계정관리', 'uri' => '/webadmin/admin/list.html', 'auth_code' => 'member')
