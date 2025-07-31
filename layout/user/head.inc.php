@@ -174,5 +174,5 @@ var layout_uri = "<?=$layout_uri?>";
 <link rel="stylesheet" type="text/css" href="/common/css/user.css"/>
 
 <!-- swiper -->
-<link rel="stylesheet" href="<?= $js_uri ?>/swiper/swiper-bundle.min.css" />
-<script src="<?= $js_uri ?>/swiper/swiper-bundle.min.js"></script>
+    <!--<link rel="stylesheet" href="<?= $js_uri ?>/swiper/swiper-bundle.min.css" />-->
+<!--<script src="<?= $js_uri ?>/swiper/swiper-bundle.min.js"></script> -->
