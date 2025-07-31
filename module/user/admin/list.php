@@ -75,83 +75,6 @@ $mb_id = $member['mb_id'];
 // 경남TP 시험성적서 발급을 위해 주석처리 yllee 230718
 //$mb_flag_test = $member['flag_test'];
 
-if ($mb_flag_test == 'Y') {
-    $list = array(
-        '0' => array(
-            'no' => '5',
-            'mb_level' => '1',
-            'mb_id' => 'alpha',
-            'mb_name' => '홍길동',
-            'cp_name' => '(주)알파에듀',
-            'mb_tel' => '000-000-0000',
-            'flag_auth' => 'Y',
-            'flag_use' => 'work',
-            'flag_book' => 'Y',
-            'flag_live' => '',
-            'bt_reg_date' => '2020-10-14 19:02:23'
-        ),
-        '1' => array(
-            'no' => '4',
-            'mb_level' => '1',
-            'mb_id' => 'alpha_test2',
-            'mb_name' => '임꺽정',
-            'cp_name' => '(주)알파에듀',
-            'mb_tel' => '000-000-0000',
-            'flag_auth' => 'Y',
-            'flag_use' => 'work',
-            'flag_book' => '',
-            'flag_live' => 'Y',
-            'bt_reg_date' => '2020-10-14 19:02:23'
-        ),
-        '2' => array(
-            'no' => '3',
-            'mb_level' => '1',
-            'mb_id' => 'alpha_test3',
-            'mb_name' => '이순신',
-            'cp_name' => '(주)알파에듀',
-            'mb_tel' => '000-000-0000',
-            'flag_auth' => 'Y',
-            'flag_use' => 'work',
-            'flag_book' => '',
-            'flag_live' => '',
-            'bt_reg_date' => '2020-10-14 19:02:23'
-        ),
-        '3' => array(
-            'no' => '2',
-            'mb_level' => '1',
-            'mb_id' => 'alpha_test4',
-            'mb_name' => '정약용',
-            'cp_name' => '(주)알파에듀',
-            'mb_tel' => '000-000-0000',
-            'flag_auth' => 'Y',
-            'flag_use' => 'work',
-            'flag_book' => 'Y',
-            'flag_live' => 'Y',
-            'bt_reg_date' => '2020-10-14 19:02:23'
-        ),
-        '4' => array(
-            'no' => '1',
-            'mb_level' => '1',
-            'mb_id' => 'alpha_test5',
-            'mb_name' => '유관순',
-            'cp_name' => '(주)알파에듀',
-            'mb_tel' => '000-000-0000',
-            'flag_auth' => 'Y',
-            'flag_use' => 'work',
-            'flag_book' => 'Y',
-            'flag_live' => 'Y',
-            'bt_reg_date' => '2020-10-14 19:02:23'
-        )
-    );
-    $cnt_total = 1;
-    //print_r($member);
-}
-if ($sch_flag_book) {
-    $query_string .= '&sch_flag_book=' . $sch_flag_book;
-}
-if ($sch_flag_live) {
-    $query_string .= '&sch_flag_live=' . $sch_flag_live;
-}
 if ($sch_company) {
     $query_string .= '&sch_company=' . $sch_company;
 }
@@ -343,6 +266,8 @@ $(function() {
         <div class="button">
             <button type="submit" class="sButton info" title="검색">검 색</button>
             <a href="./list.html" class="sButton" title="초기화">초기화</a>
+            <a href="./user_list_excel.html?page=<?= $page ?><?= $query_string ?>"
+               class="sButton" title="엑셀출력">엑셀출력</a>
         </div>
         </form>
     </div>

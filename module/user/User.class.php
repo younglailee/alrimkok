@@ -13,7 +13,6 @@ use function count;
 use function implode;
 use function is_array;
 use function preg_match;
-use function print_r;
 use function str_replace;
 use function strlen;
 use function strpos;
@@ -1148,5 +1147,23 @@ class User extends StandardModule
         $db_where = "WHERE mb_id IN('$db_mb_id')";
 
         return Db::select('tbl_user', '*', $db_where, '', '');
+    }
+
+    public function selectPartner()
+    {
+        $select_table = 'tbl_admin';
+        $select_columns = '*';
+        $db_where = "WHERE mb_level=6";
+        $db_having = $this->get('db_having');
+        $db_order = 'ORDER BY mb_name ASC';
+        $list = Db::select($select_table, $select_columns, $db_where, $db_having . ' ' . $db_order, '');
+
+        $result = [];
+        if (is_array($list)) {
+            for ($i = 0; $i < count($list); $i++) {
+                $result[$list[$i]['mb_id']] = $list[$i]['mb_name'];
+            }
+        }
+        return $result;
     }
 }

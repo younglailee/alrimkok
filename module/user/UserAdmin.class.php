@@ -8,7 +8,11 @@
 
 namespace sFramework;
 
+use function array_key_exists;
 use function count;
+use function explode;
+use function is_array;
+use function sort;
 use const _NOW_DATETIME_;
 
 class UserAdmin extends User
@@ -485,5 +489,104 @@ class UserAdmin extends User
     {
         $db_where = "WHERE cp_id='$cp_id' AND mb_level=1";
         return Db::selectOnce('tbl_user', '*', $db_where, '');
+    }
+
+    public function selectListPersonal()
+    {
+        $sch_cp_name = $_GET['sch_cp_name'];
+        $sch_cs_name = $_GET['sch_cs_name'];
+        $sch_text = $_GET['sch_text'];
+        $sch_cnt_rows = $_GET['sch_cnt_rows'];
+        $sch_like = $_GET['sch_like'];
+        $sch_date = $_GET['sch_date'];
+        $sch_s_date = $_GET['sch_s_date'];
+        $sch_e_date = $_GET['sch_e_date'];
+        $sch_flag_use = $_GET['sch_flag_use'];
+
+        //$db_where = "WHERE flag_personal = 'Y' AND (mb_level = 1 OR mb_level = 2)";
+        $db_where = "WHERE flag_personal = 'Y' AND (mb_level = 1)";
+
+        $query_string = "&sch_cnt_rows=$sch_cnt_rows&sch_like=$sch_like&sch_text=$sch_text&sch_cp_name=$sch_cp_name";
+        $query_string .= "&sch_cs_name=$sch_cs_name&sch_date=$sch_date&sch_s_date=$sch_s_date&sch_e_date=$sch_e_date";
+        $query_string .= "&sch_flag_use=$sch_flag_use";
+
+        $this->set('query_string', $query_string);
+
+        if (!$sch_cs_name && !$sch_e_date && !$sch_s_date) {
+            if ($sch_cp_name) {
+                $sch_cp_name_arr = explode('/', $sch_cp_name);
+
+                sort($sch_cp_name_arr);
+
+                if (count($sch_cp_name_arr) == 1) {
+                    $db_where .= " AND cp_name = '$sch_cp_name'";
+                } else {
+                    $db_where .= " AND (";
+                    $last_index = count($sch_cp_name_arr) - 1;
+
+                    for ($i = 0; $i < count($sch_cp_name_arr) - 1; $i++) {
+                        $db_where .= "cp_name = '$sch_cp_name_arr[$i]' OR";
+                    }
+                    $db_where .= " cp_name = '$sch_cp_name_arr[$last_index]')";
+                }
+            }
+            if ($sch_text) {
+                if ($sch_like == 'all') {
+                    $db_where .= " AND (mb_name LIKE '%$sch_text%' OR mb_id LIKE '%$sch_text%')";
+                } else {
+                    $db_where .= " AND $sch_like LIKE '%$sch_text%'";
+                }
+            }
+        }
+        if ($sch_flag_use) {
+            $db_where .= " AND flag_use = '$sch_flag_use'";
+        }
+        // 기간 검색
+        $search_date_arr = $this->get('search_date_arr');
+        if (is_array($search_date_arr)) {
+            $qs_arr = $this->getQueryStringArray();
+            $sch_date = $this->get('sch_date');
+            if (!$sch_date) {
+                $sch_date = $this->getRequestParameter('sch_date', $qs_arr);
+            }
+            $this->set('sch_date', $sch_date);
+
+            $sch_s_date = $this->get('sch_s_date');
+            if (!$sch_s_date) {
+                $sch_s_date = $this->getRequestParameter('sch_s_date', $qs_arr);
+            }
+            $this->set('sch_s_date', $sch_s_date);
+
+            $sch_e_date = $this->get('sch_e_date');
+            if (!$sch_e_date) {
+                $sch_e_date = $this->getRequestParameter('sch_e_date', $qs_arr);
+            }
+            $this->set('sch_e_date', $sch_e_date);
+
+            if ($sch_date && array_key_exists($sch_date, $search_date_arr)) {
+                if ($sch_s_date && $sch_s_date != '0000-00-00') {
+                    $db_where .= " AND $sch_date >= '$sch_s_date 00:00:00' ";
+                }
+                if ($sch_e_date && $sch_e_date != '0000-00-00') {
+                    $db_where .= " AND $sch_date <= '$sch_e_date 23:59:59' ";
+                }
+            }
+        }
+        $list = Db::select('tbl_user', '*', $db_where, '', '');
+        $cnt_total = 0;
+        if (is_array($list)) {
+            $cnt_total = count($list);
+        }
+        $this->set('cnt_total', $cnt_total);
+        $page = $this->get('page');
+        $cnt_rows = $this->get('cnt_rows');
+        $db_limit = 'LIMIT ' . ($page - 1) * $cnt_rows . ', ' . $cnt_rows;
+
+        if ($this->get('list_mode') == 'excel') {
+            $db_limit = '';
+        }
+        $list = Db::select('tbl_user', '*', $db_where, 'ORDER BY privacy_time DESC', $db_limit);
+
+        return $this->convertList($list);
     }
 }

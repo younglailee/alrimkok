@@ -186,12 +186,8 @@ class UserPartner extends User
     public function selectList()
     {
         global $member;
-        $test_id = 'alphatest';
-        if ($member['mb_id'] == $test_id) {
-            $db_where_add = " AND reg_id = '$test_id'";
-        } else {
-            $db_where_add = "";
-        }
+        $mb_id = $member['mb_id'];
+        $db_where_add = " AND partner_id='$mb_id'";
         //$cnt_total = $this->countTotal();
         $this->initSelect();
         $select_table = $this->get('select_table');
@@ -486,5 +482,14 @@ class UserPartner extends User
     {
         $db_where = "WHERE cp_id='$cp_id' AND mb_level=1";
         return Db::selectOnce('tbl_user', '*', $db_where, '');
+    }
+
+    public function checkWriteAuth()
+    {
+        $is_owner = true;
+        if ($is_owner) {
+            return true;
+        }
+        return false;
     }
 }

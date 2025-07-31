@@ -4,15 +4,16 @@
  * @author  Alpha-Edu
  */
 
+use sFramework\CompanyAdmin;
 use sFramework\Format;
 use sFramework\Html;
-use sFramework\UserAdmin;
-use sFramework\CompanyAdmin;
 use sFramework\InterestAdmin;
+use sFramework\UserPartner;
 
 if (!defined('_ALPHA_')) {
     exit;
 }
+//error_reporting(E_ALL & ~E_WARNING);ini_set('display_errors', '1');
 /* set URI */
 global $layout, $module;
 $this_uri = '/web' . $layout . '/' . $module . '/list.html';
@@ -23,7 +24,7 @@ if ($_GET['live'] == 'live') {
     $this_uri = '/web' . $layout . '/live/user_list.html';
 }
 /* init Class */
-$oUser = new UserAdmin();
+$oUser = new UserPartner();
 $pk = 'mb_id';
 $oUser->init();
 $oCompany = new CompanyAdmin();
@@ -48,6 +49,8 @@ if ($_GET['type'] == 'blank') {
 $uid = $oUser->get('uid');
 $data = $oUser->selectDetail($uid);
 $mb_id = $data['mb_id'];
+$partner_arr = $oUser->selectPartner();
+//print_r($partner_arr);
 
 // 기업정보 포함 출력 yllee 250709
 $cp_id = $data['cp_id'];
@@ -336,11 +339,16 @@ var oEditors = [];
         <?php
         $flag_notice = $data['flag_notice'];
         $checked_notice = ($flag_notice == 'Y') ? ' checked' : '';
+        $partner_id = $data['partner_id'];
         ?>
         <tr>
             <th><label for="alarm-check">알림수신 동의</label></th>
-            <td colspan="3">
+            <td>
                 <?= Html::makeCheckbox('flag_notice', array('Y' => '동의'), $data['flag_notice'], 1) ?>
+            </td>
+            <th>파트너</th>
+            <td>
+                <?= $partner_arr[$partner_id] ?>
             </td>
         </tr>
         <tr>
