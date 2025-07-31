@@ -88,6 +88,7 @@ global $module;
                     <?= Html::makeTextareaInTable('필수약관', 'necessary', $data['necessary'], 'required', 9, 130, 3) ?>
                     <?= Html::makeTextareaInTable('사이트이용약관', 'terms', $data['terms'], 'required', 9, 130, 3) ?>
                     <?= Html::makeTextareaInTable('개인정보취급방침', 'privacy', $data['privacy'], 'required', 9, 130, 3) ?>
+                    <?= Html::makeTextareaInTable('마케팅정보수신', 'selection', $data['selection'], 'required', 9, 130, 3) ?>
                     </tbody>
                 </table>
             </fieldset>

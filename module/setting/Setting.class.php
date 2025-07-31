@@ -111,7 +111,7 @@ class Setting extends StandardModule
         $target = $_POST['target'];
 
         if ($target == 'terms') {
-            $update_columns = 'necessary,privacy,terms';
+            $update_columns = 'necessary,privacy,terms,selection';
         } elseif ($target == 'exam') {
             $update_columns = 'midterm_notice,exam_notice,report_notice,report_standard';
             // 북러닝 유의사항 추가 silva 240318
