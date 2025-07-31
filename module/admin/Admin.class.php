@@ -60,6 +60,7 @@ class Admin extends StandardModule
 
         // code
         $this->set('mb_level_arr', array(
+            '6' => '파트너',
             '7' => '등록관리자',
             '8' => '부서관리자',
             '9' => '최고관리자',
