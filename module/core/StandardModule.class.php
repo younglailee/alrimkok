@@ -10,7 +10,6 @@ namespace sFramework;
 
 use function getimagesize;
 use function is_array;
-use function print_r;
 
 class StandardModule extends BaseObject
 {
@@ -1320,7 +1319,8 @@ class StandardModule extends BaseObject
                     global $member;
 
                     $size_arr = @getimagesize($result['file_path']);
-                    if ($size_arr['2'] == '2') {
+                    //if ($size_arr['2'] == '2') {
+                    if ($size_arr[2] == '2' || $size_arr[2] == '3') {
                         $fi_img_width = $size_arr['0'];
                         $fi_img_height = $size_arr['1'];
                     } else {
