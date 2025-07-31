@@ -13,6 +13,7 @@ if (!defined('_ALPHA_')) {
 }
 
 /* set URI */
+global $layout, $module;
 $this_uri = '/web' . $layout . '/' . $module . '/list.html';
 
 /* init Class */
@@ -20,12 +21,10 @@ $oAdmin = new AdminAdmin();
 $oAdmin->init();
 $pk = $oAdmin->get('pk');
 
-
 /* check auth */
 if (!$oAdmin->checkWriteAuth()) {
     Html::alert('권한이 없습니다.');
 }
-
 /* data */
 $uid = $oAdmin->get('uid');
 $data = $oAdmin->selectDetail($uid);
@@ -143,9 +142,9 @@ var oEditors = [];
                 }
                 ?>
             </td>
-            <th><label for="mb_hp">연차개수</label></th>
+            <th>최근로그인</th>
             <td>
-                <?= Html::makeInputText('leave_count', '연차개수', $data['leave_count'], 'text', 20, 15) ?>
+                <?= Format::getWithoutNull($data['mb_login_time']) ?>
             </td>
         </tr>
         <tr>
@@ -184,66 +183,7 @@ var oEditors = [];
                 <?= Html::makeInputText('mb_hp', '휴대폰', $data['mb_hp'], 'tel', 20, 15) ?>
             </td>
         </tr>
-        <!--<tr class="file">
-            <th class="required"><label for="profile_img">프로필이미지</label></th>
-            <td colspan="3">
-                <input type="hidden" name="fi_type[]" value="profile"/>
-                <input type="file" name="atch_file[]" id="profile_img" value="" class="file" size="80" title="프로필이미지"/>
-                <?php /*if ($profile_img['fi_id']) { */ ?>
-                    <p>
-                        <a href="./download.html?fi_id=<? /*=$profile_img['fi_id']*/ ?>" target="_blank" title="새창 다운로드"><img src="<? /*=$profile_img['thumb_uri']*/ ?>" alt="프로필이미지 썸네일"/></a>
-                        <span>|</span>
-                        <input type="checkbox" name="del_file[]" id="del_profile_img" value="<? /*= $profile_img['fi_id'] */ ?>"
-                               class="checkbox" title="기존파일삭제"/><label for="del_profile_img">기존파일삭제</label>
-                        <span>|</span>
-                        <a href="./download.html?fi_id=<? /*=$profile_img['fi_id']*/ ?>" class="btn_download" target="_blank" title="새창 다운로드">
-                            <strong><? /*= $profile_img['fi_name'] */ ?></strong>
-                            <span>(<? /*= $profile_img['bt_fi_size'] */ ?>)</span>
-                        </a>
-                    </p>
-                <?php /*} */ ?>
-                <p class="comment">
-                    이미지 권장사이즈(px) : 320 * 180<br/>
-                    비율(16:9)이 맞지않은 이미지를 업로드할 경우, 이미지가 일부 잘릴 수 있습니다.
-                </p>
-            </td>
-        </tr>-->
-        <?php
-        for ($i = 0; $i < $max_file - 1; $i++) {
-            ?>
-            <!--<tr class="file">
-            <th><label for="atch_file<? /*=$i+1*/ ?>">첨부파일 #<? /*=$i+1*/ ?></label></th>
-            <td colspan="3">
-                <input type="hidden" name="fi_type[]" value="default" />
-                <input type="file" name="atch_file[]" id="atch_file<? /*=$i+1*/ ?>" value="" class="file" size="100" title="첨부파일 <? /*=$i+1*/ ?>" />
-                <?php
-            /*if ($file_list[$i]['fi_id']) { */
-            ?>
-                <p>
-                    <input type="checkbox" name="del_file[]" id="del_file_<? /*=$i+1*/ ?>" value="<? /*=$file_list[$i]['fi_id']*/ ?>" class="checkbox" title="기존파일 삭제" />
-                    <label for="del_file_<? /*=$i+1*/ ?>">기존파일삭제</label>
-                    <span>|</span>
-                    <a href="./download.html?fi_id=<? /*=$file_list[$i]['fi_id']*/ ?>" class="btn_download" target="_blank" title="새창 다운로드">
-                        <strong><? /*=$file_list[$i]['fi_name']*/ ?></strong>
-                        <span>(<? /*=$file_list[$i]['bt_fi_size']*/ ?>)</span>
-                    </a>
-                </p>
-                <?php
-            /*} */
-            ?>
-            </td>
-        </tr>-->
-            <?php
-        }
-        ?>
         <?= Html::makeTextareaInTable('메모', 'mb_memo', $data['mb_memo'], '', 3, 80, 3) ?>
-        <?php
-        if ($mode == 'update') {
-            ?>
-            <?= Html::makeTrTd('최근로그인', Format::getWithoutNull($data['bf_last_login']), false, 3) ?>
-            <?php
-        }
-        ?>
         </tbody>
         </table>
         </fieldset>

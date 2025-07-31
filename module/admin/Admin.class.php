@@ -73,12 +73,9 @@ class Admin extends StandardModule
         ));
 
         $this->set('mb_auth_code_arr', array(
-            'members'   => '관리자계정',
-            'manage'  => '운영관리',
-            'user'  => '통합회원관리',
-            'stats' => '통계관리',
-            'contents'    => '콘텐츠관리',
-            'board'    => '게시판관리',
+            'user'  => '회원관리',
+            'biz' => '공고관리',
+            'board'    => '고객센터',
             'setting' => '환경설정'
         ));
 
