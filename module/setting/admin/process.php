@@ -7,6 +7,7 @@
 use sFramework\Html;
 use sFramework\SettingAdmin;
 
+//error_reporting(E_ALL & ~E_WARNING);ini_set('display_errors', '1');
 if (!defined('_ALPHA_')) {
     exit;
 }

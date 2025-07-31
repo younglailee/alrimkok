@@ -79,7 +79,7 @@ class Setting extends StandardModule
         ));
         // 업종
         $this->set('sector_arr', array(
-           'manufacturing' => '제조업',
+            'manufacturing' => '제조업',
             'service' => '기타업',
             'construction' => '건설업'
         ));
@@ -110,22 +110,21 @@ class Setting extends StandardModule
         $update_columns .= ',otp_auth_chk,otp_auth_date,otp_auth_s_time,otp_auth_e_time';
         $target = $_POST['target'];
 
-        if($target == 'terms'){
+        if ($target == 'terms') {
             $update_columns = 'necessary,privacy,terms';
-        }elseif($target == 'exam'){
+        } elseif ($target == 'exam') {
             $update_columns = 'midterm_notice,exam_notice,report_notice,report_standard';
             // 북러닝 유의사항 추가 silva 240318
             $update_columns .= ',book_exam_notice,book_report_notice';
             // 북러닝(환급) 유의사항 추가 yllee 241226
             $update_columns .= ',book_exam_caution,book_report_caution';
-        }elseif ($target == 'payment'){
+        } elseif ($target == 'payment') {
             $update_columns = 'payment_mode,tax_type,product_type,payment_type,shop_id,test_id,pay_course,bank,bank_account,refund_rule,notice,notice_v';
         }
 
         $this->set('update_columns', $update_columns);
-        $this->set('required_arr', array(
-        ));
-        $this->set('return_uri',$_POST['return_uri']);
+        $this->set('required_arr', array());
+        $this->set('return_uri', $_POST['return_uri']);
     }
 
     protected function convertDetail($data)
@@ -174,10 +173,11 @@ class Setting extends StandardModule
 
         // 기존 파일 삭제
         $del_file_arr = $_POST['del_file'];
-        for ($i = 0; $i < count($del_file_arr); $i++) {
-            $this->deleteFile($del_file_arr[$i]);
+        if (is_array($del_file_arr)) {
+            for ($i = 0; $i < count($del_file_arr); $i++) {
+                $this->deleteFile($del_file_arr[$i]);
+            }
         }
-
         // 첨부파일
         if ($this->get('max_file')) {
             $this->uploadFiles($uid);
@@ -240,7 +240,7 @@ class Setting extends StandardModule
     {
         $data_table = $this->get('setting_safe_table');
         $db_where = "WHERE type = '$type'";
-        $list = Db::select($data_table, "*", $db_where, "","");
+        $list = Db::select($data_table, "*", $db_where, "", "");
 
         return $list;
     }

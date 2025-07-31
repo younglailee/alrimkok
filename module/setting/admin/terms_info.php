@@ -25,6 +25,7 @@ $data = $oSetting->selectDetail($uid);
 
 /* search condition */
 $query_string = $oSetting->get('query_string');
+$page = $oSetting->get('page');
 
 /* code */
 $cs_type_arr = $oSetting->get('cs_type_arr');
@@ -43,6 +44,7 @@ if (!$uid || !$data[$pk]) {
 } else {
     $mode = 'update';
 }
+global $module;
 // 다음 우편번호 서비스 yllee 190306
 ?>
 <script type="text/javascript" src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
@@ -83,9 +85,9 @@ if (!$uid || !$data[$pk]) {
                         <col/>
                     </colgroup>
                     <tbody>
-                    <?= Html::makeTextareaInTable('개인정보취급방침', 'privacy', $data['privacy'], 'required', 9, 130, 3) ?>
                     <?= Html::makeTextareaInTable('필수약관', 'necessary', $data['necessary'], 'required', 9, 130, 3) ?>
                     <?= Html::makeTextareaInTable('사이트이용약관', 'terms', $data['terms'], 'required', 9, 130, 3) ?>
+                    <?= Html::makeTextareaInTable('개인정보취급방침', 'privacy', $data['privacy'], 'required', 9, 130, 3) ?>
                     </tbody>
                 </table>
             </fieldset>
