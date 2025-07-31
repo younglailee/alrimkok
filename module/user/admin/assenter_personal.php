@@ -175,7 +175,6 @@ $(function() {
         <div class="button">
             <button type="submit" class="sButton info" title="검색">검 색</button>
             <a href="./assenter_personal.html" class="sButton" title="초기화">초기화</a>
-            <a href="./personal_list_excel.html?page=1<?= $query_string ?>" class="sButton" title="엑셀출력">엑셀출력</a>
         </div>
         </form>
     </div>
