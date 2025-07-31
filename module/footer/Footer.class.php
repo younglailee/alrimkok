@@ -5,6 +5,7 @@
  * @author  Alpha-Edu
  * @package
  */
+
 namespace sFramework;
 
 class Footer extends StandardModule
@@ -23,7 +24,7 @@ class Footer extends StandardModule
         // 검색
         $this->set('search_columns', 'cr_code');
         $this->set('search_like_arr', array(
-            'cr_subject'     => '제목'
+            'cr_subject' => '제목'
         ));
 
         // 정렬
@@ -53,8 +54,7 @@ class Footer extends StandardModule
             'basic' => '기본',
             'blue' => '블루'
         ));
-
-        $this->set('img_size', '150 * 43');
+        $this->set('img_size', '1320 * 140');
     }
 
     protected function initInsert()
@@ -63,9 +63,9 @@ class Footer extends StandardModule
 
         $this->set('insert_columns', 'ft_subject,ft_alt,ft_uri,ft_order,ft_is_display');
         $this->set('required_arr', array(
-            'ft_subject'   => '제목',
-            'ft_is_display'   => '출력여부',
-            'ft_order'  => '출력순서',
+            'ft_subject' => '제목',
+            'ft_is_display' => '출력여부',
+            'ft_order' => '출력순서',
         ));
     }
 
@@ -97,9 +97,9 @@ class Footer extends StandardModule
         $pk = $this->get('pk');
         $this->set('update_columns', $pk . ',ft_subject,ft_alt,ft_uri,ft_order,ft_is_display,');
         $this->set('required_arr', array(
-            'ft_subject'   => '제목',
-            'ft_is_display'   => '출력여부',
-            'ft_order'  => '출력순서',
+            'ft_subject' => '제목',
+            'ft_is_display' => '출력여부',
+            'ft_order' => '출력순서',
         ));
     }
 
@@ -141,14 +141,15 @@ class Footer extends StandardModule
         // 첨부파일 처리
         $file_list = $data['file_list'];
         $data['carousel_img'] = null;
-        for ($i = 0; $i < count($file_list); $i++) {
-            $file_type = $file_list[$i]['fi_type'];
-            if ($file_type == 'carousel') {
-                $data['carousel_img'] = $file_list[$i];
-                break;
+        if ($data['file_list']) {
+            for ($i = 0; $i < count($file_list); $i++) {
+                $file_type = $file_list[$i]['fi_type'];
+                if ($file_type == 'carousel') {
+                    $data['carousel_img'] = $file_list[$i];
+                    break;
+                }
             }
         }
-
         if ($data['carousel_img']) {
             $data['img_uri'] = $data['carousel_img']['fi_uri'];
             //$data['thumb_uri'] = $data['carousel_img']['fi_uri'];
@@ -170,7 +171,7 @@ class Footer extends StandardModule
     public function changeOrder()
     {
         $result = array(
-            'code'  => 'failure'
+            'code' => 'failure'
         );
         $data_table = $this->get('data_table');
         $pk = $this->get('pk');
